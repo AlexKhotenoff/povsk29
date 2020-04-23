@@ -91,6 +91,9 @@ $(document).ready(function(){
           iconContentLayout: MyIconContentLayout
         });
   
+        myMap.behaviors.disable('scrollZoom');
+        // myMap.behaviors.disable('drag'); 
+        // myMap.behaviors.disable('multiTouch');
       myMap.geoObjects
         .add(myPlacemarkWithContent);
     });

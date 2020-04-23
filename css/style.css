@@ -304,18 +304,44 @@
 .contacts__timetable-time_weekend {
   text-transform: lowercase; }
 
+.contacts__map-container {
+  position: relative; }
+
+.contacts__map-overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2; }
+
+.contacts__map-overlay-button {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: none;
+  background-color: transparent;
+  cursor: pointer; }
+  .contacts__map-overlay-button:hover {
+    color: #e7e7e7; }
+  .contacts__map-overlay-button:active {
+    color: #636363; }
+
 .contacts__map {
   width: 600px;
   height: 300px;
   background-color: silver; }
-  .contacts__map * {
-    touch-action: auto; }
 
 @media (max-width: 767px) {
   .contacts__container {
     display: block; }
   .contacts__info {
     margin-bottom: 30px; }
+  .contacts__map-overlay_active {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
   .contacts__map {
     width: 100%; } }
 

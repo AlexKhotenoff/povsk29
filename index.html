@@ -406,7 +406,12 @@
                         </li>
                     </ul>
                 </div>
-                <div id="map" class="contacts__map"></div>
+                <div class="contacts__map-container">
+                    <div class="contacts__map-overlay contacts__map-overlay_active">
+                        <button type="button" class="contacts__map-overlay-button">Нажмите для активации</button>
+                    </div>
+                    <div id="map" class="contacts__map"></div>
+                </div>
             </div>
         </section>
     </main>
@@ -415,7 +420,8 @@
             <div class="main-footer__logo-container">
                 <div class="main-footer__logo-wrapper">
                     <div class="main-footer__logo-link">
-                        <img src="img/logo.png" alt="ПОВСК Архангельск" class="main-footer__logo" width="260" height="70">
+                        <img src="img/logo.png" alt="ПОВСК Архангельск" class="main-footer__logo" width="260"
+                            height="70">
                     </div>
                     <h2 class="main-footer__organisation-name">Пункт отбора на военную службу по контракту
                         (2 разряда) <br> г. Архангельск Северного флота</h2>
@@ -495,7 +501,7 @@
     </div>
 </body>
 
-<!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=557d7e10-7a17-45e0-aec3-d851af85ae59"></script> -->
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=557d7e10-7a17-45e0-aec3-d851af85ae59"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.fitvids.js"></script>
 <script src="js/jquery.bxslider.min.js"></script>

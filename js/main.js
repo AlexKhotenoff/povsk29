@@ -1,5 +1,8 @@
 var advantages = document.querySelector(".advantages");
 
+var toggle_button = document.querySelector(".main-nav__toggle");
+var sandvitch_icon = document.querySelector(".main-nav__sandvitch");
+
 const anchors = document.querySelectorAll('a[href*="#"]')
 
 for (let anchor of anchors) {
@@ -14,6 +17,21 @@ for (let anchor of anchors) {
     })
   })
 }
+
+//menu
+
+toggle_button.addEventListener('click', function () {
+
+  if (!sandvitch_icon.classList.contains('main-nav__sandvitch_on')) {
+    sandvitch_icon.classList.add('main-nav__sandvitch_on');
+  }
+  else {
+    sandvitch_icon.classList.remove('main-nav__sandvitch_on');
+  }
+
+});
+
+//end of menu
 
 //advantages tabs
 if (advantages) {

@@ -59,6 +59,9 @@
                     </li>
                 </ul>
             </nav>
+            <button type="button" class="main-nav__toggle">
+                <div class="main-nav__sandvitch"></div>
+            </button>
         </div>
     </header>
     <main class="main-content page__wrapper">
@@ -133,35 +136,48 @@
                 <div class="advantages__group container">
                     <ul class="advantages-list">
                         <li class="advantages-list__item">
-                            <button type="button"
-                                class="advantages-list__button advantages-list__button_active">Денежное
-                                довольствие</button>
+                            <button type="button" class="advantages-list__button advantages-list__button_money  advantages-list__button_active">
+                                Денежное довольствие
+                            </button>
+                        </li>
+                        <li class="advantages-list__item advantages-list__food">
+                            <button type="button" class="advantages-list__button advantages-list__button_food">
+                                Продовольственное обеспечение
+                            </button>
                         </li>
                         <li class="advantages-list__item">
-                            <button type="button" class="advantages-list__button">Продовольственное обеспечение</button>
+                            <button type="button" class="advantages-list__button advantages-list__button_house">
+                               Жилищное обеспечение
+                            </button>
                         </li>
                         <li class="advantages-list__item">
-                            <button type="button" class="advantages-list__button">Жилищное обеспечение</button>
+                            <button type="button" class="advantages-list__button advantages-list__button_uniform">
+                                Вещевое обеспечение
+                            </button>
                         </li>
                         <li class="advantages-list__item">
-                            <button type="button" class="advantages-list__button">Вещевое обеспечение</button>
+                            <button type="button" class="advantages-list__button advantages-list__button_pharmacy">
+                                Медицинское обеспечение
+                            </button>
                         </li>
                         <li class="advantages-list__item">
-                            <button type="button" class="advantages-list__button">Медицинское обеспечение</button>
+                            <button type="button" class="advantages-list__button advantages-list__button_retirement">
+                                Пенсионное обеспечение
+                            </button>
                         </li>
                         <li class="advantages-list__item">
-                            <button type="button" class="advantages-list__button">Пенсионное обеспечение</button>
+                            <button type="button" class="advantages-list__button advantages-list__button_vacation">
+                                Бесплатный проезд
+                            </button>
                         </li>
                         <li class="advantages-list__item">
-                            <button type="button" class="advantages-list__button">Бесплатный проезд</button>
-                        </li>
-                        <li class="advantages-list__item">
-                            <button type="button" class="advantages-list__button">Страхование жизни и здоровья</button>
+                            <button type="button" class="advantages-list__button advantages-list__button_insurance">
+                                Страхование жизни и здоровья
+                            </button>
                         </li>
                     </ul>
                     <ul class="advantages-description">
-                        <li
-                            class="advantages-description__item advantages-description__item_money advantages-description__item_show">
+                        <li class="advantages-description__item advantages-description__item_money advantages-description__item_show">
                             <div class="advantages-description__content">
                                 <h3 class="advantages-description__title">Денежное довольствие</h3>
                                 <p class="advantages-description__text">Денежное довольствие военнослужащего состоит из
@@ -351,7 +367,9 @@
                                   11.32 11.43 19.06 21.94 14.86L160 448V214.92c-8.84-15.98-16.07-31.54-21.25-46.42L20.12 215.95zM288 359.67c-14.07 0-27.38-6.18-36.51-16.96-19.66-23.2-40.57-49.62-59.49-76.72v182l192
                                    64V266c-18.92 27.09-39.82 53.52-59.49 76.72-9.13 10.77-22.44 16.95-36.51 16.95zm266.06-198.51L416 224v288l139.88-55.95A31.996 31.996 0 00576 426.34V176.02c0-11.32-11.43-19.06-21.94-14.86z" />
                             </svg>
-                            <p class="contacts__content">163001, г. Архангельск, ул. Ф. Шубина, д. 17, каб. 17
+                            <p class="contacts__content">
+                                <a href="geo:64.554778, 40.539630" class="contacts__link contacts__link_addresss">
+                                    163001, г. Архангельск, ул. Ф. Шубина, д. 17, каб. 17</a>
                             </p>
                         </li>
                         <li class="contacts__item">
@@ -408,7 +426,7 @@
                 </div>
                 <div class="contacts__map-container">
                     <div class="contacts__map-overlay contacts__map-overlay_active">
-                        <button type="button" class="contacts__map-overlay-button">Нажмите для активации</button>
+                        <button type="button" class="contacts__map-overlay-button">Нажмите для просмотра карты</button>
                     </div>
                     <div id="map" class="contacts__map"></div>
                 </div>
@@ -419,10 +437,10 @@
         <div class="main-footer__wrapper page__wrapper">
             <div class="main-footer__logo-container">
                 <div class="main-footer__logo-wrapper">
-                    <div class="main-footer__logo-link">
+                    <a href="index.html" class="main-footer__logo-link">
                         <img src="img/logo.png" alt="ПОВСК Архангельск" class="main-footer__logo" width="260"
                             height="70">
-                    </div>
+                    </a>
                     <h2 class="main-footer__organisation-name">Пункт отбора на военную службу по контракту
                         (2 разряда) <br> г. Архангельск Северного флота</h2>
                 </div>
@@ -437,8 +455,11 @@
                                   11.32 11.43 19.06 21.94 14.86L160 448V214.92c-8.84-15.98-16.07-31.54-21.25-46.42L20.12 215.95zM288 359.67c-14.07 0-27.38-6.18-36.51-16.96-19.66-23.2-40.57-49.62-59.49-76.72v182l192
                                    64V266c-18.92 27.09-39.82 53.52-59.49 76.72-9.13 10.77-22.44 16.95-36.51 16.95zm266.06-198.51L416 224v288l139.88-55.95A31.996 31.996 0 00576 426.34V176.02c0-11.32-11.43-19.06-21.94-14.86z" />
                         </svg>
-                        <p class="main-footer__contacts-content">163001, г. Архангельск, ул. Ф. Шубина, д. 17, каб.
-                            17
+                        <p class="main-footer__contacts-content">
+                            <a href="geo:64.554778, 40.539630"
+                                class="main-footer__contacts-link main-footer__contacts-link_address">
+                                163001, г. Архангельск, ул. Ф. Шубина, д. 17, каб. 17
+                            </a>
                         </p>
                     </li>
                     <li class="main-footer__contacts-item">

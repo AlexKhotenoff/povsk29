@@ -1,7 +1,8 @@
-var advantages = document.querySelector(".advantages");
+var advantages = document.querySelector('.advantages');
 
-var toggle_button = document.querySelector(".main-nav__toggle");
-var sandvitch_icon = document.querySelector(".main-nav__sandvitch");
+var nav_list = document.querySelector('.main-nav__list');
+var toggle_button = document.querySelector('.main-nav__toggle');
+var sandvitch_icon = document.querySelector('.main-nav__sandvitch');
 
 const anchors = document.querySelectorAll('a[href*="#"]')
 
@@ -24,9 +25,30 @@ toggle_button.addEventListener('click', function () {
 
   if (!sandvitch_icon.classList.contains('main-nav__sandvitch_on')) {
     sandvitch_icon.classList.add('main-nav__sandvitch_on');
+
+    if (!nav_list.classList.contains('main-nav__list_mobile')) {
+      nav_list.classList.add('main-nav__list_mobile');
+      nav_list.classList.add('main-nav__list_mobile-open');
+    }
   }
   else {
     sandvitch_icon.classList.remove('main-nav__sandvitch_on');
+    sandvitch_icon.classList.add('main-nav__sandvitch_off');
+
+    if (nav_list.classList.contains('main-nav__list_mobile')) {
+      nav_list.classList.remove('main-nav__list_mobile-open');
+      nav_list.classList.add('main-nav__list_mobile-close');
+      setTimeout(function () {
+        nav_list.classList.remove('main-nav__list_mobile');
+        nav_list.classList.remove('main-nav__list_mobile-open');
+        nav_list.classList.remove('main-nav__list_mobile-close');
+      }, 700);
+    }
+
+    setTimeout(function () {
+      sandvitch_icon.classList.remove('main-nav__sandvitch_off');
+    }, 800);
+
   }
 
 });

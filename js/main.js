@@ -1,8 +1,12 @@
 var advantages = document.querySelector('.advantages');
 
+//menu vars
+var init_width;
+
 var nav_list = document.querySelector('.main-nav__list');
 var toggle_button = document.querySelector('.main-nav__toggle');
 var sandvitch_icon = document.querySelector('.main-nav__sandvitch');
+//end of menu vars
 
 const anchors = document.querySelectorAll('a[href*="#"]')
 
@@ -20,9 +24,20 @@ for (let anchor of anchors) {
 }
 
 //menu
-
 toggle_button.addEventListener('click', function () {
+  menu_toggle();
+});
 
+function menu_toggle() {
+  if (!sandvitch_icon.classList.contains('main-nav__sandvitch_on')) {
+    menu_open();
+  }
+  else {
+    menu_close();
+  }
+}
+
+function menu_open() {
   if (!sandvitch_icon.classList.contains('main-nav__sandvitch_on')) {
     sandvitch_icon.classList.add('main-nav__sandvitch_on');
 
@@ -31,7 +46,10 @@ toggle_button.addEventListener('click', function () {
       nav_list.classList.add('main-nav__list_mobile-open');
     }
   }
-  else {
+}
+
+function menu_close() {
+  if (sandvitch_icon.classList.contains('main-nav__sandvitch_on')) {
     sandvitch_icon.classList.remove('main-nav__sandvitch_on');
     sandvitch_icon.classList.add('main-nav__sandvitch_off');
 
@@ -42,16 +60,14 @@ toggle_button.addEventListener('click', function () {
         nav_list.classList.remove('main-nav__list_mobile');
         nav_list.classList.remove('main-nav__list_mobile-open');
         nav_list.classList.remove('main-nav__list_mobile-close');
-      }, 700);
+      }, 350);
     }
 
     setTimeout(function () {
       sandvitch_icon.classList.remove('main-nav__sandvitch_off');
-    }, 800);
-
+    }, 500);
   }
-
-});
+}
 
 //end of menu
 
@@ -90,7 +106,10 @@ function advantages_init(advantages_block) {
 
 //slider
 
+//bxslider initialize
 $(document).ready(function () {
+  init_width = window.outerWidth;
+
   $('.bxslider').bxSlider({
     adaptiveHeight: true,
     controls: true,
@@ -106,6 +125,7 @@ var map_container = document.querySelector('.contacts__map-container');
 var map_overlay = document.querySelector('.contacts__map-overlay');
 var overlay_button = document.querySelector('.contacts__map-overlay-button');
 
+//close map overlay button
 overlay_button.addEventListener('click', function () {
   if (map_overlay.classList.contains('contacts__map-overlay_active')) {
     map_overlay.classList.remove('contacts__map-overlay_active');
@@ -156,3 +176,13 @@ try {
 catch {
   console.log("Yandex maps is not defined at this page");
 }
+
+// //close mobile menu if window is resized
+// window.addEventListener("resize", function () {
+//     menu_close();
+// }, false);
+
+//close mobile menu if window is orientation changed
+window.addEventListener("orientationchange", function() {
+  menu_close();
+}, false);

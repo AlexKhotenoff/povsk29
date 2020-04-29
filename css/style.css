@@ -619,7 +619,7 @@
 .advantages-description__button_disabled:hover,
 .advantages-description__button_disabled:active {
   color: rgba(255, 255, 255, 0.5);
-  background-color: #32425c;
+  background-color: #858b85;
   border: none;
   opacity: 0.3;
   cursor: default; }
@@ -1129,6 +1129,83 @@
   border: none;
   opacity: 0.3;
   cursor: default; }
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 20px 10px;
+  background-color: rgba(53, 77, 56, 0.7);
+  list-style: none; }
+
+.breadcrumbs__item {
+  position: relative;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 16px;
+  font-kerning: none;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #fff; }
+
+.breadcrumbs__item:not(:first-child) {
+  margin-left: 25px; }
+
+.breadcrumbs__item:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  width: 8px;
+  height: 12px;
+  margin-top: -6px;
+  background-image: url("../img/icons/svg/right-breadcrumb-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+.breadcrumbs__link {
+  color: #354d38; }
+
+.breadcrumbs__link:hover {
+  color: #ddbb44; }
+
+.breadcrumbs__link:active {
+  color: #3f5842; }
+
+.breadcrumbs__link:disabled,
+.breadcrumbs__link_disabled,
+.breadcrumbs__link_disabled:hover,
+.breadcrumbs__link_disabled:active {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #858b85;
+  border: none;
+  opacity: 0.3;
+  cursor: default; }
+
+.breadcrumbs__link--main {
+  display: block;
+  width: 14px;
+  height: 14px; }
+  .breadcrumbs__link--main .breadcrumbs__icon {
+    fill: #ffffff; }
+  .breadcrumbs__link--main:hover .breadcrumbs__icon {
+    fill: #ddbb44; }
+
+.for-recruts {
+  margin: 0;
+  padding: 30px 15px; }
+
+.for-recruts__title {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000; }
 
 .underconstruct__title {
   width: 60%;

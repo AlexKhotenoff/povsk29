@@ -401,6 +401,7 @@
   overflow: hidden; }
 
 .advantages__wrapper {
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px; }
 
@@ -605,7 +606,6 @@
   text-transform: uppercase;
   font-size: 14px;
   line-height: 18px;
-  border-radius: 3px;
   background-color: #354d38; }
 
 .advantages-description__button:hover {
@@ -636,7 +636,8 @@
 
 @media (max-width: 767px) {
   .advantages__group {
-    width: 100%; }
+    width: 100%;
+    margin: 0; }
   .advantages-list__button {
     width: 45px;
     font-size: 0;
@@ -646,7 +647,10 @@
   .advantages-description__content {
     width: 100%; }
   .advantages-description__item {
-    background-image: none; } }
+    background-image: none; }
+  .advantages-description__title {
+    font-size: 24px;
+    line-height: 30px; } }
 
 .news {
   padding: 30px 15px;
@@ -700,7 +704,7 @@
   font-weight: 700;
   color: #354d38; }
   .post__link:hover {
-    border-bottom: 1px solid #354d38; }
+    text-decoration: underline; }
 
 .post__content {
   display: flex;
@@ -870,7 +874,6 @@
   text-transform: uppercase;
   font-size: 14px;
   line-height: 18px;
-  border-radius: 3px;
   background-color: #354d38; }
   .contacts__button_details:hover {
     background-color: #2d412f; }
@@ -1192,11 +1195,13 @@
   .breadcrumbs__link--main:hover .breadcrumbs__icon {
     fill: #ddbb44; }
 
-.for-recruts {
+.for-recruits {
   margin: 0;
-  padding: 30px 15px; }
+  padding: 30px 15px;
+  background-color: rgba(107, 123, 109, 0.63);
+  background-image: url("../img/background/camo.png"); }
 
-.for-recruts__title {
+.for-recruits__title {
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
@@ -1206,6 +1211,75 @@
   line-height: 30px;
   text-transform: uppercase;
   color: #000000; }
+
+.for-recruits__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.for-recruits__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 48%;
+  min-width: 300px;
+  min-height: 250px;
+  margin-bottom: 15px;
+  background-color: #354d38; }
+
+.for-recruits__card:nth-child(2n) {
+  margin-left: 15px; }
+
+.content-card {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: rgba(192, 192, 192, 0.8); }
+
+.content-card__title {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  color: #000000; }
+
+.content-card__description {
+  color: #000000; }
+
+.content-card__button {
+  width: 150px;
+  margin-left: auto;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  border-top: 1px solid #3f5842;
+  border-bottom: 1px solid #2d412f;
+  background-color: #354d38;
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 35px;
+  cursor: pointer; }
+
+@media (max-width: 767px) {
+  .for-recruits {
+    margin: 0;
+    padding: 30px 0; }
+  .for-recruits__card {
+    width: 100%;
+    margin-right: 0; }
+  .for-recruits__card:nth-child(n) {
+    margin-right: 15px;
+    margin-left: 0; }
+  .for-recruits__card:nth-child(2n) {
+    margin-left: 15px;
+    margin-right: 0; }
+    .for-recruits__card:nth-child(2n) .content-card__button {
+      margin: 0;
+      margin-right: auto; } }
 
 .underconstruct__title {
   width: 60%;

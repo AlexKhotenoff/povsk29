@@ -1149,7 +1149,7 @@
   font-kerning: none;
   line-height: 18px;
   text-transform: uppercase;
-  color: #fff; }
+  color: #ffffff; }
 
 .breadcrumbs__item:not(:first-child) {
   margin-left: 25px; }
@@ -1168,7 +1168,7 @@
   background-size: contain; }
 
 .breadcrumbs__link {
-  color: #354d38; }
+  color: #ffffff; }
 
 .breadcrumbs__link:hover {
   color: #ddbb44; }
@@ -1198,7 +1198,7 @@
 .for-recruits {
   margin: 0;
   padding: 30px 15px;
-  background-color: rgba(107, 123, 109, 0.63);
+  background-color: rgba(107, 123, 109, 0.1);
   background-image: url("../img/background/camo.png"); }
 
 .for-recruits__title {
@@ -1233,7 +1233,7 @@
 .content-card {
   flex-grow: 1;
   padding: 10px;
-  background-color: rgba(192, 192, 192, 0.8); }
+  background-color: rgba(255, 255, 255, 0.8); }
 
 .content-card__title {
   margin: 0;
@@ -1280,6 +1280,28 @@
     .for-recruits__card:nth-child(2n) .content-card__button {
       margin: 0;
       margin-right: auto; } }
+
+.requirements {
+  margin: 0;
+  padding: 30px 15px;
+  background-color: rgba(107, 123, 109, 0.1);
+  background-image: url("../img/background/camo.png"); }
+
+.requirements__title {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000; }
+
+.requirements__list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
 
 .underconstruct__title {
   width: 60%;

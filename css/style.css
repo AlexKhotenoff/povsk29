@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Cuprum-Regular";
+  src: url("../Fonts/Cuprum/Cuprum-Regular.ttf") format("truetype"), url("../Fonts/Cuprum/Cuprum-Regular.woff") format("woff"), url("../Fonts/Cuprum/Cuprum-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Cuprum-Italic";
+  src: url("../Fonts/Cuprum/Cuprum-Italic.ttf") format("truetype"), url("../Fonts/Cuprum/Cuprum-Italic.woff") format("woff"), url("../Fonts/Cuprum/Cuprum-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Cuprum-Bold";
+  src: url("../Fonts/Cuprum/Cuprum-Bold.ttf") format("truetype"), url("../Fonts/Cuprum/Cuprum-Bold.woff") format("woff"), url("../Fonts/Cuprum/Cuprum-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Cuprum-BoldItalic";
+  src: url("../Fonts/Cuprum/Cuprum-BoldItalic.ttf") format("truetype"), url("../Fonts/Cuprum/Cuprum-BoldItalic.woff") format("woff"), url("../Fonts/Cuprum/Cuprum-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic; }
+
 .page {
   width: 100%;
   font-family: "Cuprum", "Arial", sans-serif;
@@ -1284,8 +1308,7 @@
 .requirements {
   margin: 0;
   padding: 30px 15px;
-  background-color: rgba(107, 123, 109, 0.1);
-  background-image: url("../img/background/camo.png"); }
+  background-color: rgba(107, 123, 109, 0.1); }
 
 .requirements__title {
   margin: 0;
@@ -1302,6 +1325,45 @@
   margin: 0;
   padding: 0;
   list-style: none; }
+
+.requirements__item {
+  margin-bottom: 10px;
+  padding: 15px; }
+
+.requirement {
+  position: relative;
+  margin-left: 75px;
+  background-color: #ffffff; }
+  .requirement::before {
+    content: "";
+    position: absolute;
+    left: -75px;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: left top; }
+  .requirement_age::before {
+    background-image: url("../img/icons/svg/age.svg"); }
+  .requirement_health::before {
+    background-image: url("../img/icons/svg/health.svg"); }
+  .requirement_education::before {
+    background-image: url("../img/icons/svg/education.svg"); }
+  .requirement_professional::before {
+    background-image: url("../img/icons/svg/professional.svg"); }
+  .requirement_suitability::before {
+    background-image: url("../img/icons/svg/suitability.svg"); }
+  .requirement_sport::before {
+    background-image: url("../img/icons/svg/sport.svg"); }
+
+.requirement__title {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase; }
 
 .underconstruct__title {
   width: 60%;

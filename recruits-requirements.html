@@ -16,14 +16,6 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet"> -->
-
-    <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet"> -->
-
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/jquery.bxslider.css">
     <link rel="stylesheet" href="css/style.css">
@@ -90,23 +82,92 @@
             <h1 class="requirements__title">Минимальные требования к кандидатам</h1>
             <div class="requirements__container">
                 <ul class="requirements__list">
-                    <li class="requirements__item">
-                        <h2 class="reqiurements__requirement-title">Возраст</h2>
+                    <li class="requirements__item requirement requirement_age">
+                        <h2 class="requirement__title">Возраст</h2>
+                        <p class="requirement__description">Ограничения по возрасту:</p>
+                        <ul class="requirement__description-list">
+                            <li class="requirement__description-item">
+                               <p class="requirement__description-text">От 18 до 40 лет при заключении первого контракта;</p>
+                            </li>
+                            <li class="requirement__description-item">
+                                <p class="requirement__description-text">Предельный возраст - 50 лет.</p> 
+                                <p class="requirement__description-text">Дополнительно до 10 лет сверх предельного возраста.</p> 
+                            </li>
+                        </ul>
                     </li>
-                    <li class="requirements__item">
-                        <h2 class="reqiurements__requirement-title">Здоровье</h2>
+                    <li class="requirements__item requirement requirement_health">
+                        <h2 class="requirement__title">Здоровье</h2>
+                        <p class="requirement__description">Категория годности по здоровью:</p>
+                        <ul class="requirement__description-list">
+                            <li class="requirement__description-item">
+                               <p class="requirement__description-text">"А" - годен к военной службе</p>
+                               <p class="requirement__description-text">Все виды и рода войск</p>
+                            </li>
+                            <li class="requirement__description-item">
+                                <p class="requirement__description-text">"Б" - годен с незначительными ограничениями</p>
+                                <p class="requirement__description-text">Прохождение службы во всех видах и родах войск, за исключением: 
+                                    Воздушно-десантных войск, Морской пехоты, плавсостава Военно-морского флота, войск Специального назначения.
+                                </p>    
+                            </li>
+                        </ul>
                     </li>
-                    <li class="requirements__item">
-                        <h2 class="reqiurements__requirement-title">Уровень образования</h2>
+                    <li class="requirements__item requirement requirement_education">
+                        <h2 class="requirement__title">Уровень образования</h2>
+                        <p class="requirement__description">Ограничения по уровню образования</p>
+                        <ul class="requirement__description-list">
+                            <li class="requirement__description-item">
+                               <p class="requirement__description-text">Не ниже "основного общего" (9 Кл.)</p>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="requirements__item">
-                        <h2 class="reqiurements__requirement-title">Профессиональная подготовка</h2>
+                    <li class="requirements__item requirement requirement_professional">
+                        <h2 class="requirement__title">Профессиональная подготовка</h2>
+                        <p class="requirement__description">Ограничения по профессиональной подготовке</p>
+                        <ul class="requirement__description-list">
+                            <li class="requirement__description-item">
+                               <p class="requirement__description-text">Граждане, состоящие в запасе, прошедшие службу по призыву или контракту;</p>
+                            </li>
+                            <li class="requirement__description-item">
+                                <p class="requirement__description-text">Граждане, не состоящие в запасе, но имеющие "среднее профессиональное"
+                                    или "высшее" образование.
+                                </p>
+                             </li>
+                        </ul>
                     </li>
-                    <li class="requirements__item">
-                        <h2 class="reqiurements__requirement-title">Профпригодность</h2>
+                    <li class="requirements__item requirement requirement_suitability">
+                        <h2 class="requirement__title">Профпригодность</h2>
+                        <p class="requirement__description">Заключение о профессиональной пригодности</p>
+                        <ul class="requirement__description-list">
+                            <li class="requirement__description-item">
+                               <p class="requirement__description-text">I категория - рекомендуется в первую очередь.</p>
+                               <p class="requirement__description-text">Граджанин или военнослужащий по уровню развития профессиональных
+                                   важных качеств <strong>полностью соответствует</strong> требованиям воинской должности;
+                               </p>
+                            </li>
+                            <li class="requirement__description-item">
+                                <p class="requirement__description-text">II категория - рекомендуется.</p>
+                                <p class="requirement__description-text">Граджанин или военнослужащий по уровню развития профессиональных
+                                    важных качеств <strong>в основном соответствует</strong> требованиям воинской должности;
+                                </p>
+                             </li>
+                             <li class="requirement__description-item">
+                                <p class="requirement__description-text">III категория - рекомендуется условно./p>
+                                <p class="requirement__description-text">Граджанин или военнослужащий по уровню развития профессиональных
+                                    важных качеств <strong>минимально соответствует</strong> требованиям воинской должности.
+                                    Допускается к профессиональной деятельности при недостатке других кандидатов;
+                                </p>
+                             </li>
+                             <li class="requirement__description-item">
+                                <p class="requirement__description-text">IV категория - не рекомендуется.</p>
+                                <p class="requirement__description-text">Граджанин или военнослужащий по уровню развития профессиональных
+                                    важных качеств <strong>не соответствует</strong> требованиям воинской должности.
+                                </p>
+                             </li>
+                        </ul>
                     </li>
-                    <li class="requirements__item">
-                        <h2 class="reqiurements__requirement-title">Физическая подготовка</h2>
+                    <li class="requirements__item requirement requirement_sport">
+                        <h2 class="requirement__title">Физическая подготовка</h2>
+                        <p class="requirement__description">Соответствие <a href="recruits-sport.html"> нормативам </a> по физической подготовке</p>
                     </li>
                 </ul>
                 

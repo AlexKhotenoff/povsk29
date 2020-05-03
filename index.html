@@ -30,7 +30,7 @@
                 <img src="img/logo.png" alt="ПОВСК Архангельск" class="page-header__logo" width="230" height="70">
             </a>
             <nav class="main-nav">
-                <ul class="main-nav__list">
+                <ul class="main-nav__list main-nav__list_no-mobile">
                     <li class="main-nav__item main-nav__item_active">
                         <a href="index.html" class="main-nav__link">Главная</a>
                     </li>
@@ -38,13 +38,18 @@
                         <a href="news.html" class="main-nav__link">Новости</a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="recruits.html" class="main-nav__link">Кандидатам</a>
+                        <div class="main-nav__item-wrapper">
+                            <a href="recruits.html" class="main-nav__link">Кандидатам</a>
+                            <button type="button" class="main-nav__button main-nav__button_dropdown"></button>
+                        </div>
                         <ul class="main-nav__list main-nav__list_sub-menu">
                             <li class="main-nav__item main-nav__item_sub-menu">
-                                <a href="recruits-requirements.html" class="main-nav__link main-nav__link_sub-menu">Требования к кандидатам</a>
+                                <a href="recruits-requirements.html"
+                                    class="main-nav__link main-nav__link_sub-menu">Требования к кандидатам</a>
                             </li>
                             <li class="main-nav__item main-nav__item_sub-menu">
-                                <a href="" class="main-nav__link main-nav__link_sub-menu">Порядок поступления на в/сл.</a>
+                                <a href="" class="main-nav__link main-nav__link_sub-menu">Порядок поступления на
+                                    в/сл.</a>
                             </li>
                             <li class="main-nav__item main-nav__item_sub-menu">
                                 <a href="" class="main-nav__link main-nav__link_sub-menu">Перечень документов</a>

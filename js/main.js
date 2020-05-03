@@ -4,8 +4,10 @@ var advantages = document.querySelector('.advantages');
 var init_width;
 
 var nav_list = document.querySelector('.main-nav__list');
+var sub_menu = nav_list.querySelector('.main-nav__list_sub-menu');
 var toggle_button = document.querySelector('.main-nav__toggle');
 var sandvitch_icon = document.querySelector('.main-nav__sandvitch');
+var dropdown_button = nav_list.querySelectorAll('.main-nav__button_dropdown');
 //end of menu vars
 
 const anchors = document.querySelectorAll('a[href*="#"]')
@@ -28,6 +30,14 @@ toggle_button.addEventListener('click', function () {
   menu_toggle();
 });
 
+dropdown_button.forEach(element => {
+  element.addEventListener('click', function (){
+    element.classList.toggle('main-nav__button_dropdown-open');
+    sub_menu.classList.toggle('main-nav__list_sub-menu-open');
+  });
+});
+  
+
 function menu_toggle() {
   if (!sandvitch_icon.classList.contains('main-nav__sandvitch_on')) {
     menu_open();
@@ -41,7 +51,8 @@ function menu_open() {
   if (!sandvitch_icon.classList.contains('main-nav__sandvitch_on')) {
     sandvitch_icon.classList.add('main-nav__sandvitch_on');
 
-    if (!nav_list.classList.contains('main-nav__list_mobile')) {
+    if (nav_list.classList.contains('main-nav__list_no-mobile')) {
+      nav_list.classList.remove('main-nav__list_no-mobile');
       nav_list.classList.add('main-nav__list_mobile');
       nav_list.classList.add('main-nav__list_mobile-open');
     }
@@ -60,6 +71,7 @@ function menu_close() {
         nav_list.classList.remove('main-nav__list_mobile');
         nav_list.classList.remove('main-nav__list_mobile-open');
         nav_list.classList.remove('main-nav__list_mobile-close');
+        nav_list.classList.add('main-nav__list_no-mobile');
       }, 350);
     }
 

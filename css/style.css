@@ -88,6 +88,10 @@
   padding: 0;
   list-style: none; }
 
+.main-nav__list_no-mobile:hover .main-nav__list_sub-menu {
+  display: flex;
+  flex-direction: column; }
+
 .main-nav__list_mobile {
   display: flex;
   flex-direction: column;
@@ -98,9 +102,6 @@
   height: 100vh;
   background-color: #344c37;
   z-index: 3; }
-  .main-nav__list_mobile .main-nav__list_sub-menu {
-    display: flex;
-    position: static; }
 
 .main-nav__list_mobile-open {
   animation: nav-list-open 0.8s normal; }
@@ -111,18 +112,19 @@
 @keyframes nav-item-hover {
   0% {
     border: none;
-    opacity: 0.25; }
+    opacity: 0; }
   25% {
     border-left: 1px solid #ffffff;
-    opacity: 0.5; }
+    opacity: 0.25; }
   50% {
     border-top: 1px solid #ffffff;
-    opacity: 0.75; }
+    opacity: 0.5; }
   75% {
     border-right: 1px solid #ffffff;
-    opacity: 1; }
+    opacity: 0.75; }
   100% {
-    border-bottom: 1px solid #ffffff; } }
+    border-bottom: 1px solid #ffffff;
+    opacity: 1; } }
 
 .main-nav__item {
   position: relative;
@@ -145,9 +147,29 @@
     animation: none; }
   .main-nav__item_active > .main-nav__link {
     color: #ddbb44; }
-  .main-nav__item:hover .main-nav__list_sub-menu {
-    display: flex;
-    flex-direction: column; }
+
+.main-nav__item-wrapper {
+  display: flex;
+  align-items: center; }
+
+.main-nav__button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent; }
+
+.main-nav__button_dropdown {
+  display: none;
+  width: 17px;
+  height: 17px;
+  margin-left: 5px;
+  background-image: url("../img/icons/svg/right-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+.main-nav__button_dropdown-open {
+  background-image: url("../img/icons/svg/down-arrow.svg"); }
 
 .main-nav__link {
   position: relative;
@@ -174,6 +196,11 @@
   background-color: #354d38;
   list-style: none;
   z-index: 2; }
+
+.main-nav__list_sub-menu-open {
+  display: flex;
+  width: 100%;
+  position: static; }
 
 .main-nav__item_sub-menu {
   padding-left: 10px; }
@@ -300,6 +327,12 @@
     display: none; }
   .main-nav__item_sub-menu::before {
     display: none; }
+  .main-nav__button_dropdown {
+    display: block; }
+  .main-nav__list_sub-menu-open {
+    display: flex;
+    width: 100%;
+    position: static; }
   .main-nav__link {
     justify-content: flex-start;
     padding-top: 4px;
@@ -1258,8 +1291,7 @@
 .for-recruits {
   margin: 0;
   padding: 30px 15px;
-  background-color: rgba(107, 123, 109, 0.1);
-  background-image: url("../img/background/camo.png"); }
+  background-color: rgba(107, 123, 109, 0.1); }
 
 .for-recruits__title {
   margin: 0;

@@ -289,8 +289,7 @@
   .main-nav__list {
     display: none; }
   .main-nav__list_mobile {
-    display: flex;
-    justify-content: flex-start;
+    display: block;
     padding: 20px;
     box-shadow: -4px 10px 9px 4px rgba(0, 0, 0, 0.4);
     overflow: scroll; }

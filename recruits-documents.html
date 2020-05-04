@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/jquery.bxslider.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>ПОВСК Архангельск</title>
+    <title>Перечень документов</title>
 </head>
 
 <body class="page">
@@ -30,7 +30,7 @@
                 <img src="img/logo.png" alt="ПОВСК Архангельск" class="page-header__logo" width="230" height="70">
             </a>
             <nav class="main-nav">
-                <ul class="main-nav__list">
+                <ul class="main-nav__list main-nav__list_no-mobile">
                     <li class="main-nav__item">
                         <a href="index.html" class="main-nav__link">Главная</a>
                     </li>
@@ -38,16 +38,22 @@
                         <a href="news.html" class="main-nav__link">Новости</a>
                     </li>
                     <li class="main-nav__item main-nav__item_active">
-                        <a href="recruits.html" class="main-nav__link">Кандидатам</a>
+                        <div class="main-nav__item-wrapper">
+                            <a href="recruits.html" class="main-nav__link">Кандидатам</a>
+                            <button type="button" class="main-nav__button main-nav__button_dropdown"></button>
+                        </div>
                         <ul class="main-nav__list main-nav__list_sub-menu">
                             <li class="main-nav__item main-nav__item_sub-menu">
-                                <a href="recruits-requirements.html" class="main-nav__link main-nav__link_sub-menu">Требования к кандидатам</a>
+                                <a href="recruits-requirements.html"
+                                    class="main-nav__link main-nav__link_sub-menu">Требования к кандидатам</a>
                             </li>
                             <li class="main-nav__item main-nav__item_sub-menu">
-                                <a href="" class="main-nav__link main-nav__link_sub-menu">Порядок поступления на в/сл.</a>
+                                <a href="" class="main-nav__link main-nav__link_sub-menu">Порядок поступления на
+                                    в/сл.</a>
                             </li>
                             <li class="main-nav__item main-nav__item_sub-menu">
-                                <a href="" class="main-nav__link main-nav__link_sub-menu">Перечень документов</a>
+                                <a href="recruits-documents.html"
+                                    class="main-nav__link main-nav__link_sub-menu">Перечень документов</a>
                             </li>
                             <li class="main-nav__item main-nav__item_sub-menu">
                                 <a href="" class="main-nav__link main-nav__link_sub-menu">Социальные льготы</a>
@@ -84,11 +90,16 @@
             <li class="breadcrumbs__item">
                 <a href="index.html" class="breadcrumbs__link breadcrumbs__link--main">
                     <span class="visually-hidden">Главная</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#354d38" class="breadcrumbs__icon"><g><path d="M3 8v4h4V8h2v4h4V8L8 3.516z"/>
-                        <path d="M14.831 6.365L13 4.751V0h-2v2.987L8.332.635c-.02-.017-.043-.023-.064-.037a.465.465 0 00-.08-.047.551.551 0
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#354d38"
+                        class="breadcrumbs__icon">
+                        <g>
+                            <path d="M3 8v4h4V8h2v4h4V8L8 3.516z" />
+                            <path d="M14.831 6.365L13 4.751V0h-2v2.987L8.332.635c-.02-.017-.043-.023-.064-.037a.465.465 0 00-.08-.047.551.551 0
                          00-.095-.024C8.062.521 8.032.515 8 .515c-.031 0-.061.006-.092.012a.46.46 0 
                          00-.095.025c-.028.011-.053.029-.08.046-.021.014-.045.02-.064.037l-6.498 5.73a.501.501 0 00.33.875.497.497 0
-                          00.331-.125L8 1.677l6.169 5.438a.501.501 0 00.662-.75z"/></g></svg>
+                          00.331-.125L8 1.677l6.169 5.438a.501.501 0 00.662-.75z" />
+                        </g>
+                    </svg>
                 </a>
             </li>
             <li class="breadcrumbs__item">
@@ -97,19 +108,247 @@
             <li class="breadcrumbs__item cbreadcrumbs__item--active">Перечень документов</li>
         </ul>
         <section class="documents">
-            <h1 class="documents__title">Перечень документов необходимых для поступления на военную службу по контракту</h1>
+            <h1 class="documents__title">Перечень документов необходимых для поступления на военную службу по контракту
+            </h1>
             <ol class="documents__list">
                 <li class="documents__item">
+                    <div class="documents__document-group">
+                        <p class="documents__document-name">
+                            Перечень документов (Памятка)
+                        </p>
+                        <a class="documents__link" href="docs/doc-list.zip" download>
+                            <span class="documents__link-caption">Скачать</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="documents__item">
+                    <div class="documents__document-group">
+                        <p class="documents__document-name">
+                            Заявление гражданина *
+                        </p>
+                        <a class="documents__link" href="docs/zayavlenie.zip" download>
+                            <span class="documents__link-caption">Скачать</span></a>
+                    </div>
+                    <p class="documents__footnote">* Заполняется в пункте отбора</p>
+                </li>
+                <li class="documents__item">
+                    <div class="documents__document-group">
+                        <p class="documents__document-name">
+                            Согласие на обработку персональных данных
+                        </p>
+                        <a class="documents__link" href="docs/soglasie_na_obrabotku_pd.zip" download>
+                            <span class="documents__link-caption">Скачать</span></a>
+                    </div>
+                </li>
+                <li class="documents__item">
                     <p class="documents__document-name">
-                        Заявление гражданина
+                        Фотографии:
+                    </p>
+                    <ul class="documents__list documents__list_sub-list">
+                        <li class="documents__item documents__item_sub-item">3x4 (7шт.) с правым уголком, цветные
+                            матовые</li>
+                        <li class="documents__item documents__item_sub-item">4x6 (1шт.) чёрно-белая</li>
+                        <li class="documents__item documents__item_sub-item">9x12 (1шт.)</li>
+                    </ul>
+                </li>
+                <li class="documents__item">
+                    <div class="documents__document-group">
+                        <p class="documents__document-name">
+                            Автобиография (2 шт.):
+                        </p>
+                        <a class="documents__link" href="docs/autobiography.zip" download>
+                            <span class="documents__link-caption">Скачать</span></a>
+                    </div>
+                    <ul class="documents__list documents__list_sub-list">
+                        <li class="documents__item documents__item_sub-item">Написанная собственноручно;</li>
+                        <li class="documents__item documents__item_sub-item">Набранная на компьютере и распечатанная;
+                        </li>
+                    </ul>
+                </li>
+                <li class="documents__item">
+                    <div class="documents__document-group">
+                        <p class="documents__document-name">
+                            Анкета кандидата
+                        </p>
+                        <a class="documents__link" href="docs/anketa.zip" download>
+                            <span class="documents__link-caption">Скачать</span></a>
+                    </div>
+                    <p class="documents__footnote">* Необходимо вклеить фотографию 4x6</p>
+                </li>
+                <li class="documents__item">
+                    <div class="documents__document-group">
+                        <p class="documents__document-name">
+                            Демографисеская анкета кандидата
+                        </p>
+                        <a class="documents__link" href="docs/anketa_demograph.zip" download>
+                            <span class="documents__link-caption">Скачать</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Копии документов об образовании:
+                    </p>
+                    <ul class="documents__list documents__list_sub-list">
+                        <li class="documents__item documents__item_sub-item">Аттестат;</li>
+                        <li class="documents__item documents__item_sub-item">Диплом (при наличии) с оценочной
+                            ведомостью;</li>
+                    </ul>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Копии трудовой книжки (при наличии)
                     </p>
                 </li>
                 <li class="documents__item">
                     <p class="documents__document-name">
-                        Фотографии 3x4 (6шт.), 4x6 (1шт.), 9x12 (1шт.)
+                        Характеристика с последнего места службы, работы или учебы
                     </p>
                 </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Выписка из домовой книги *
+                    </p>
+                    <p class="documents__footnote">* Выдается в паспортном столе или МФЦ</p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Копия свидетельства о рождении
+                    </p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Копия военного билета (при наличии)*
+                    </p>
+                    <p class="documents__footnote">* Все страницы в цветном варианте</p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Копия паспорта *
+                    </p>
+                    <p class="documents__footnote">* Все страницы с записями</p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Копия свидетельства о браке (при наличии)
+                    </p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Копия свидетельства о рождении детей (при наличии)
+                    </p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Результаты профессионально-психологического отбора
+                    </p>
+                </li>
+                <li class="documents__item">
+                    <div class="documents__document-group">
+                        <p class="documents__document-name">
+                            Карта медицинского освидетельствования гражданина
+                        </p>
+                        <a class="documents__link" href="docs/medkarta.zip" download>
+                            <span class="documents__link-caption">Скачать</span></a>
+                    </div>
+                    <p class="documents__footnote">* Необходимо вклеить фотографию 3x4 и заверить ее в военном
+                        комиссариате по месту учёта</p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Результаты анализов:
+                    </p>
+                    <ul class="documents__list documents__list_sub-list">
+                        <li class="documents__item documents__item_sub-item">ЭКГ исследования в покое и после нагрузки;
+                        </li>
+                        <li class="documents__item documents__item_sub-item">Общий анализ крови;</li>
+                        <li class="documents__item documents__item_sub-item">Анализ крови на ВИЧ и серологических
+                            реакций на сифилис;</li>
+                        <li class="documents__item documents__item_sub-item">Общий анализ мочи;</li>
+                        <li class="documents__item documents__item_sub-item">Анализ крови на гепатит;</li>
+                    </ul>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Справки из диспансеров:
+                    </p>
+                    <ul class="documents__list documents__list_sub-list">
+                        <li class="documents__item documents__item_sub-item">Психоневрологического;</li>
+                        <li class="documents__item documents__item_sub-item">Противотуберкулезного;</li>
+                        <li class="documents__item documents__item_sub-item">Кожно-венерологического;</li>
+                        <li class="documents__item documents__item_sub-item">Наркологическогою</li>
+                    </ul>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Результат исследования на наркотест
+                    </p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Флюорограмма (Рентгенограмма) органов грудной клетки в двух проекциях
+                    </p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Выписка из амбулаторной карты о перенесённых заболеваниях
+                    </p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Сертификат о профилактических прививках *
+                    </p>
+                    <p class="documents__footnote">* Прививки от кори и АДСМ</p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Справка от гинеколога, анализ мазка *
+                    </p>
+                    <p class="documents__footnote">* Для граждан женского пола</p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Копия идентификационного номера налогоплательщика *
+                    </p>
+                    <p class="documents__footnote">* ИНН</p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Справка из банка с реквизитами счёта банковской карты *
+                    </p>
+                    <p class="documents__footnote">* Карты платежной системы "МИР" из любых банков!</p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Копия страхового пенсионного свидетельства *
+                    </p>
+                    <p class="documents__footnote">* СНИЛС</p>
+                </li>
+                <li class="documents__item">
+                    <p class="documents__document-name">
+                        Учётно-послужная карта *
+                    </p>
+                    <p class="documents__footnote">* УПК. Выдается в военном комиссариате при постаноке на учет, как
+                        дубликат военного билета</p>
+                </li>
+                <li class="documents__item">
+                    <div class="documents__document-group">
+                        <p class="documents__document-name">
+                            Справка о доходах, расходах, об имуществе и обязательствах имущественного характера
+                        </p>
+                        <a class="documents__link" href="http://www.kremlin.ru/structure/additional/12" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="documents__link-caption">Скачать</span></a>
+                    </div>
+                </li>
             </ol>
+            <div class="documents__document-group documents__document-group_all">
+                <p class="documents__document-name">
+                    Весь пакет документов
+                </p>
+                <a class="documents__link" href="docs/documents.zip" download>
+                    <span class="documents__link-caption">Скачать</span></a>
+            </div>
         </section>
     </main>
     <footer class="main-footer">
@@ -201,10 +440,7 @@
     </div>
 </body>
 
-<!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=557d7e10-7a17-45e0-aec3-d851af85ae59"></script> -->
 <script src="js/jquery.min.js"></script>
-<script src="js/jquery.fitvids.js"></script>
-<script src="js/jquery.bxslider.min.js"></script>
 <script src="js/main.js"></script>
 
 </html>

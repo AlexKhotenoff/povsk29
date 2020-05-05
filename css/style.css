@@ -38,6 +38,17 @@
 .page__container {
   display: flex; }
 
+.page__title {
+  margin: 0;
+  padding: 20px 15px;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: #ffffff; }
+
 @media (max-width: 767px) {
   .page__wrapper {
     width: 100%; } }
@@ -993,7 +1004,8 @@
     cursor: default; }
 
 .contacts__map-container {
-  position: relative; }
+  position: relative;
+  margin-left: 15px; }
 
 .contacts__map-overlay {
   display: none;
@@ -1044,7 +1056,9 @@
 @media (max-width: 575px) {
   .contacts__link_addresss:hover {
     text-decoration: underline;
-    cursor: pointer; } }
+    cursor: pointer; }
+  .contacts__map-container {
+    margin-left: 0; } }
 
 .main-footer {
   padding-top: 20px;
@@ -1338,7 +1352,8 @@
 .content-card {
   flex-grow: 1;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.8); }
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.1); }
 
 .content-card__title {
   margin: 0;
@@ -1391,30 +1406,20 @@
   padding: 30px 15px;
   background-color: rgba(107, 123, 109, 0.1); }
 
-.requirements__title {
-  margin: 0;
-  margin-bottom: 20px;
-  padding: 0;
-  font-family: "Cuprum", "Arial", sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 30px;
-  text-transform: uppercase;
-  color: #000000; }
-
 .requirements__list {
   margin: 0;
   padding: 0;
   list-style: none; }
 
 .requirements__item {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 15px; }
 
 .requirement {
   position: relative;
   margin-left: 75px;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
   .requirement::before {
     content: "";
     position: absolute;
@@ -1468,7 +1473,7 @@
   margin-bottom: 20px;
   padding: 0;
   font-family: "Cuprum", "Arial", sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 30px;
   text-transform: uppercase;
@@ -1487,16 +1492,19 @@
   list-style: disc; }
 
 .documents__item {
+  position: relative;
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   padding: 0;
   padding: 15px;
-  background-color: #fff; }
+  background-color: #ffffff;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
 
 .documents__item_sub-item {
   margin: 0;
   margin-bottom: 15px;
-  padding: 0; }
+  padding: 0;
+  box-shadow: none; }
 
 .documents__document-group {
   display: flex;
@@ -1507,23 +1515,37 @@
   background-color: #c3c9c3; }
 
 .documents__number {
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  width: 45px;
+  height: 21px;
+  padding: 0px 5px;
   margin-right: 5px;
-  font-size: 20px; }
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #354d38; }
 
 .documents__document-name {
   margin: 0;
   padding: 0;
-  font-size: 24px;
+  font-size: 20px;
   text-transform: uppercase; }
 
 .documents__footnote {
-  padding-left: 15px;
   font-style: italic;
   font-weight: 700;
   text-decoration: underline; }
 
+.documents__link-group {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto; }
+
 .documents__link {
   margin-left: auto;
+  margin-bottom: 15px;
   padding-right: 25px;
   color: #354d38;
   text-transform: uppercase;
@@ -1537,19 +1559,29 @@
   .documents__link:active {
     color: #3f5842;
     background-image: url("../img/icons/svg/download.svg"); }
+  .documents__link_outer {
+    margin-left: 5px;
+    background-image: url("../img/icons/svg/outer-link.svg"); }
+  .documents__link_outer:hover {
+    color: #ddbb44;
+    background-image: url("../img/icons/svg/outer-link-hover.svg"); }
+  .documents__link_outer:active {
+    color: #3f5842;
+    background-image: url("../img/icons/svg/outer-link.svg"); }
+  .documents__link:last-child {
+    margin-bottom: 0; }
 
 @media (max-width: 767px) {
   .documents {
-    padding-left: 0;
-    padding-right: 0; }
+    padding-left: 10;
+    padding-right: 10; }
   .documents__item {
-    margin-bottom: 5px;
     padding: 15px 10px; }
   .documents__item_sub-item {
     margin-bottom: 15px;
     padding: 0; }
   .documents__document-name {
-    font-size: 20px; }
+    font-size: 16px; }
   .documents__link {
     width: 25px;
     height: 25px; }

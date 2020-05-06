@@ -1479,6 +1479,9 @@
   text-transform: uppercase;
   color: #000000; }
 
+.documents__type-group {
+  margin-bottom: 30px; }
+
 .documents__list {
   margin: 0;
   padding: 0;
@@ -1527,9 +1530,23 @@
   color: #ffffff;
   background-color: #354d38; }
 
+.documents__name-group {
+  margin-right: 10px; }
+
 .documents__document-name {
   margin: 0;
   padding: 0;
+  font-size: 20px;
+  text-transform: uppercase; }
+
+.documents__document-name_law {
+  font-size: 16px; }
+
+.documents__short-name {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  font-family: inherit;
   font-size: 20px;
   text-transform: uppercase; }
 

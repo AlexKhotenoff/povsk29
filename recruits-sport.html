@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="povsk29">
+    <meta name="application-name" content="povsk29">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Нормативы по физической подготовке</title>
+</head>
+
+<body class="page">
+    <header class="page-header">
+        <div class="page-header__wrapper page__wrapper">
+            <a href="index.html" class="page-header__link">
+                <img src="img/logo.png" alt="ПОВСК Архангельск" class="page-header__logo" width="230" height="70">
+            </a>
+            <nav class="main-nav">
+                <ul class="main-nav__list main-nav__list_no-mobile">
+                    <li class="main-nav__item">
+                        <a href="index.html" class="main-nav__link">Главная</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="news.html" class="main-nav__link">Новости</a>
+                    </li>
+                    <li class="main-nav__item main-nav__item_active">
+                        <div class="main-nav__item-wrapper">
+                            <a href="recruits.html" class="main-nav__link">Кандидатам</a>
+                            <button type="button" class="main-nav__button main-nav__button_dropdown"></button>
+                        </div>
+                        <ul class="main-nav__list main-nav__list_sub-menu">
+                            <li class="main-nav__item main-nav__item_sub-menu">
+                                <a href="recruits-requirements.html"
+                                    class="main-nav__link main-nav__link_sub-menu">Требования к кандидатам</a>
+                            </li>
+                            <li class="main-nav__item main-nav__item_sub-menu">
+                                <a href="" class="main-nav__link main-nav__link_sub-menu">Порядок поступления на
+                                    в/сл.</a>
+                            </li>
+                            <li class="main-nav__item main-nav__item_sub-menu">
+                                <a href="recruits-documents.html"
+                                    class="main-nav__link main-nav__link_sub-menu">Перечень документов</a>
+                            </li>
+                            <li class="main-nav__item main-nav__item_sub-menu">
+                                <a href="" class="main-nav__link main-nav__link_sub-menu">Социальные льготы</a>
+                            </li>
+                            <li class="main-nav__item main-nav__item_sub-menu">
+                                <a href="" class="main-nav__link main-nav__link_sub-menu">Калькулятор ДД</a>
+                            </li>
+                            <li class="main-nav__item main-nav__item_sub-menu">
+                                <a href="recruits-sport.html" class="main-nav__link main-nav__link_sub-menu">Нормативы
+                                    по ФП</a>
+                            </li>
+                            <li class="main-nav__item main-nav__item_sub-menu">
+                                <a href="recruits-laws.html"
+                                    class="main-nav__link main-nav__link_sub-menu">Нормативно-правовая база</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="404.html" class="main-nav__link">Калькуляторы</a>
+                    </li>
+                    <li class="main-nav__item ">
+                        <a href="404.html" class="main-nav__link">FAQ</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="contacts.html" class="main-nav__link">Контакты</a>
+                    </li>
+                </ul>
+                <button type="button" class="main-nav__toggle">
+                    <div class="main-nav__sandvitch"></div>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content page__wrapper">
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs__item">
+                <a href="index.html" class="breadcrumbs__link breadcrumbs__link--main">
+                    <span class="visually-hidden">Главная</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#354d38"
+                        class="breadcrumbs__icon">
+                        <g>
+                            <path d="M3 8v4h4V8h2v4h4V8L8 3.516z" />
+                            <path d="M14.831 6.365L13 4.751V0h-2v2.987L8.332.635c-.02-.017-.043-.023-.064-.037a.465.465 0 00-.08-.047.551.551 0
+                         00-.095-.024C8.062.521 8.032.515 8 .515c-.031 0-.061.006-.092.012a.46.46 0 
+                         00-.095.025c-.028.011-.053.029-.08.046-.021.014-.045.02-.064.037l-6.498 5.73a.501.501 0 00.33.875.497.497 0
+                          00.331-.125L8 1.677l6.169 5.438a.501.501 0 00.662-.75z" />
+                        </g>
+                    </svg>
+                </a>
+            </li>
+            <li class="breadcrumbs__item">
+                <a href="recruits.html" class="breadcrumbs__link">Кандидатам</a>
+            </li>
+            <li class="breadcrumbs__item cbreadcrumbs__item--active">Нормативы по ФП</li>
+        </ul>
+        <h1 class="page__title">Нормативы по физической подготовке
+        </h1>
+        <section class="sport">
+            <h2 class="sport__title visually-hidden">Нормативы по физической подготовке для граждан, поступающих на
+                военную службу по контракту
+            </h2>
+            <p class="sport__description">Нормативы по физической подготовке для граждан, поступающих на военную службу
+                по контракту
+                делятся на 3 блока по несколько упражнений в каждом.
+            </p>
+            <section class="sport__example-wrapper">
+                <h2 class="sport__title">Список упражнений</h2>
+                <ul class="sport__list sport__list_blocks">
+                    <li class="sport__item sport__item_block-type">
+                        <p class="sport__block-name">1. Сила:</p>
+                        <ul class="sport__list sport__list_exercise sport__list_example">
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Сгибание и разгибание рук в упоре лежа</p>
+                            </li>
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Толчок 2 гирь, весом 24 кг</p>
+                            </li>
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Наклоны туловища вперед</p>
+                            </li>
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Подтягивание на перекладине</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sport__item sport__item_block-type">
+                        <p class="sport__block-name">2. Скорость:</p>
+                        <ul class="sport__list sport__list_exercise sport__list_example">
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Бег на 60 м</p>
+                            </li>
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Бег на 100 м</p>
+                            </li>
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Челночный бег на 10 х 10 м</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sport__item sport__item_block-type">
+                        <p class="sport__block-name">3. Выносливость:</p>
+                        <ul class="sport__list sport__list_exercise sport__list_example">
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Бег на 1 км</p>
+                            </li>
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Бег на 3 км</p>
+                            </li>
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Плавание 500 м*</p>
+                            </li>
+                            <li class="sport__item sport__item_exercise sport__item_example">
+                                <p class="sport__exercise-name">Лыжная гонка на 5 км</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <p class="sport__description">Из каждого блока выбирается по одному упражнению, в зависимости от
+                возраста и пола кандидата на военную службу по контракту.</p>
+            <p class="sport__description">Нормативы считаются выполнеными, если сданы все 3 упражнения.</p>
+
+            <section class="sport__applicant-type">
+                <h2 class="sport__subtitle">Для граждан мужского пола</h2>
+                <ul class="sport__list sport__list_blocks">
+                    <li class="sport__item sport__item_block-type">
+                        <p class="sport__block-name">1. Сила:</p>
+                        <ul class="sport__list sport__list_exercise">
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Сгибание и разгибание рук в упоре лежа</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 30 лет</p>
+                                        <p class="sport__result">35 раз</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 30 лет</p>
+                                        <p class="sport__result">30 раз</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Толчок 2 гирь, весом 24 кг</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 30 лет</p>
+                                        <p class="sport__result">11/15 раз</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 30 лет</p>
+                                        <p class="sport__result">9/13 раз</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Подтягивание на перекладине</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 30 лет</p>
+                                        <p class="sport__result">10 раз</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 30 лет</p>
+                                        <p class="sport__result">8 раз</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sport__item sport__item_block-type">
+                        <p class="sport__block-name">2. Скорость:</p>
+                        <ul class="sport__list sport__list_exercise">
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Бег на 60 м</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 30 лет</p>
+                                        <p class="sport__result">9.8 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 30 лет</p>
+                                        <p class="sport__result">10.0 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Бег на 100 м</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 30 лет</p>
+                                        <p class="sport__result">15.0 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 30 лет</p>
+                                        <p class="sport__result">15.8 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Челночный бег на 10 х 10 м</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 30 лет</p>
+                                        <p class="sport__result">28.5 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 30 лет</p>
+                                        <p class="sport__result">29.5 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sport__item sport__item_block-type">
+                        <p class="sport__block-name">3. Выносливость:</p>
+                        <ul class="sport__list sport__list_exercise">
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Бег на 1 км</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 30 лет</p>
+                                        <p class="sport__result">4 мин. 20 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 30 лет</p>
+                                        <p class="sport__result">4 мин. 45 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Бег на 3 км</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 30 лет</p>
+                                        <p class="sport__result">14 мин. 00 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 30 лет</p>
+                                        <p class="sport__result">15 мин. 15 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Плавание 500 м*</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 30 лет</p>
+                                        <p class="sport__result">13 мин. 00 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 30 лет</p>
+                                        <p class="sport__result">13 мин. 30 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Лыжная гонка на 5 км</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 30 лет</p>
+                                        <p class="sport__result">28 мин. 00 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 30 лет</p>
+                                        <p class="sport__result">29 мин. 15 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="sport__applicant-type">
+                <h2 class="sport__subtitle">Для граждан женского пола</h2>
+                <ul class="sport__list sport__list_blocks">
+                    <li class="sport__item sport__item_block-type">
+                        <p class="sport__block-name">1. Сила:</p>
+                        <ul class="sport__list sport__list_exercise">
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Сгибание и разгибание рук в упоре лежа</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 25 лет</p>
+                                        <p class="sport__result">12 раз</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 25 лет</p>
+                                        <p class="sport__result">10 раз</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Наклоны туловища вперед</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 25 лет</p>
+                                        <p class="sport__result">25 раз</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 25 лет</p>
+                                        <p class="sport__result">20 раз</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sport__item sport__item_block-type">
+                        <p class="sport__block-name">2. Скорость:</p>
+                        <ul class="sport__list sport__list_exercise">
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Бег на 60 м</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 25 лет</p>
+                                        <p class="sport__result">12.9 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 25 лет</p>
+                                        <p class="sport__result">13.9 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Бег на 100 м</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 25 лет</p>
+                                        <p class="sport__result">19.5 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 25 лет</p>
+                                        <p class="sport__result">20.5 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Челночный бег на 10 х 10 м</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 25 лет</p>
+                                        <p class="sport__result">38.0 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 25 лет</p>
+                                        <p class="sport__result">39.0 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sport__item sport__item_block-type">
+                        <p class="sport__block-name">3. Выносливость:</p>
+                        <ul class="sport__list sport__list_exercise">
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Бег на 1 км</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 25 лет</p>
+                                        <p class="sport__result">5 мин. 20 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 25 лет</p>
+                                        <p class="sport__result">5 мин. 45 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sport__item sport__item_exercise">
+                                <p class="sport__exercise-name">Плавание 300 м*</p>
+                                <ul class="sport__list sport__list_age">
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">До 25 лет</p>
+                                        <p class="sport__result">11 мин. 00 сек.</p>
+                                    </li>
+                                    <li class="sport__item sport__item_age">
+                                        <p class="sport__age-limit">Старше 25 лет</p>
+                                        <p class="sport__result">11 мин. 30 сек.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <p class="sport__description">* Плавание принимается при наличии условий для кандидатов в плавсостав ВМФ.</p>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="main-footer__wrapper page__wrapper">
+            <div class="main-footer__logo-container">
+                <div class="main-footer__logo-wrapper">
+                    <a href="index.html" class="main-footer__logo-link">
+                        <img src="img/logo.png" alt="ПОВСК Архангельск" class="main-footer__logo" width="260"
+                            height="70">
+                    </a>
+                    <h2 class="main-footer__organisation-name">Пункт отбора на военную службу по контракту
+                        (2 разряда) <br> г. Архангельск Северного флота</h2>
+                </div>
+                <ul class="main-footer__contacts-list">
+                    <li class="main-footer__contacts-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="25" height="25"
+                            class="main-footer__contacts-icon">
+                            <path fill="#354d38"
+                                d="M288 0c-69.59 0-126 56.41-126 126 0 56.26 82.35 158.8 113.9 
+                                196.02 6.39 7.54 17.82 7.54 24.2 0C331.65 284.8 414 182.26 414 126 414 56.41 357.59
+                                 0 288 0zm0 168c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42zM20.12 215.95A32.006 32.006 0 000 245.66v250.32c0
+                                  11.32 11.43 19.06 21.94 14.86L160 448V214.92c-8.84-15.98-16.07-31.54-21.25-46.42L20.12 215.95zM288 359.67c-14.07 0-27.38-6.18-36.51-16.96-19.66-23.2-40.57-49.62-59.49-76.72v182l192
+                                   64V266c-18.92 27.09-39.82 53.52-59.49 76.72-9.13 10.77-22.44 16.95-36.51 16.95zm266.06-198.51L416 224v288l139.88-55.95A31.996 31.996 0 00576 426.34V176.02c0-11.32-11.43-19.06-21.94-14.86z" />
+                        </svg>
+                        <p class="main-footer__contacts-content">
+                            <a href="geo:64.554778, 40.539630"
+                                class="main-footer__contacts-link main-footer__contacts-link_address">
+                                163001, г. Архангельск, ул. Ф. Шубина, д. 17, каб. 17
+                            </a>
+                        </p>
+                    </li>
+                    <li class="main-footer__contacts-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25"
+                            class="main-footer__contacts-icon">
+                            <path fill="#354d38"
+                                d="M497.39 361.8l-112-48a24 24 0 00-28 6.9l-49.6 60.6A370.66 370.66 0 01130.6 204.11l60.6-49.6a23.94 23.94 0 006.9-28l-48-112A24.16 24.16 0 00122.6.61l-104 24A24
+                                 24 0 000 48c0 256.5 207.9 464 464 464a24 24 0 0023.4-18.6l24-104a24.29 24.29 0 00-14.01-27.6z" /></svg>
+                        <p class="main-footer__contacts-content"><a href="tel:+78182247959"
+                                class="main-footer__contacts-link">8(8182)24-79-59</a></p>
+                    </li>
+                    <li class="main-footer__contacts-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25"
+                            class="main-footer__contacts-icon">
+                            <path fill="#354d38"
+                                d="M176 216h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16H176c-8.84 0-16 7.16-16 16v16c0
+                                8.84 7.16 16 16 16zm-16 80c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16H176c-8.84 0-16 7.16-16 16v16zm96 121.13c-16.42 0-32.84-5.06-46.86-15.19L0
+                                 250.86V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V250.86L302.86 401.94c-14.02 10.12-30.44 15.19-46.86 15.19zm237.61-254.18c-8.85-6.94-17.24-13.47-29.61-22.81V96c0-26.51-21.49-48-48-48h-77.55c-3.04-2.2-5.87-4.26-9.04-6.56C312.6 
+                                 29.17 279.2-.35 256 0c-23.2-.35-56.59 29.17-73.41 41.44-3.17 2.3-6 4.36-9.04 6.56H96c-26.51 0-48 21.49-48 48v44.14c-12.37 9.33-20.76 15.87-29.61 22.81A47.995 47.995
+                                  0 000 200.72v10.65l96 69.35V96h320v184.72l96-69.35v-10.65c0-14.74-6.78-28.67-18.39-37.77z" /></svg>
+                        <p class="main-footer__contacts-content"><a href="mailto:povsk-arhangelsk@mil.ru"
+                                class="main-footer__contacts-link">povsk-arhangelsk@mil.ru</a></p>
+                    </li>
+                </ul>
+            </div>
+            <ul class="socials">
+                <li class="socials__item">
+                    <a href="https://vk.com/povskarh" class="socials__link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="15" class="socials__vk">
+                            <path fill="#000000"
+                                d="M16.138 11.51c.956-.309 2.18 2.04 3.483 2.939.978.681
+                                 1.727.534 1.727.534l3.473-.05s1.815-.112.957-1.554c-.071-.12-.503-1.069-2.585-3.022-2.177-2.043-1.882-1.712.739-5.244 
+                                 1.597-2.153 2.236-3.468 2.036-4.028-.192-.539-1.365-.399-1.365-.399L20.69.713c-.381.001-.704.119-.851.515-.003.004-.621 
+                                 1.666-1.445 3.079-1.741 2.989-2.436 3.148-2.724 2.961-.661-.433-.494-1.737-.494-2.664 0-2.897.432-4.105-.846-4.417-.427-.104-.739-.172-1.828-.182-1.392-.021-2.574
+                                  0-3.244.329-.445.223-.786.712-.579.74.26.035.843.16 1.155.586.401.552.389 1.789.389 1.789s.229 3.411-.54 
+                                  3.834c-.528.29-1.25-.302-2.803-3.016-.793-1.388-1.392-2.922-1.392-2.922s-.116-.285-.326-.441c-.25-.185-.6-.244-.6-.244L.848.684S.29.7.085.946c-.182.218-.015.668-.015.668s2.909
+                                   6.881 6.203 10.347c3.02 3.182 6.452 2.971 6.452 2.971h1.555s.469-.054.709-.312c.224-.24.214-.691.214-.691s-.031-2.109.935-2.419z" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="socials__item">
+                    <a href="https://www.instagram.com/povsk_arhangelsk" class="socials__link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" class="socials__inst">
+                            <path fill="#000000" d="M18 0H3C1.35 0 0 1.35 0 3v15c0 1.65 1.35 3 3 3h15c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zm-7.5
+                                 7c1.93 0 3.5 1.57 3.5 3.5S12.43 14 10.5 14 7 12.43 7 10.5 8.57 7 10.5 7zM18 18H3V9h1.181A6.504 6.504
+                                  0 004 10.5a6.5 6.5 0 1013 0 6.45 6.45 0 00-.181-1.5H18v9zm0-11h-4V3h4v4z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <div class="main-footer__copyrights-list">
+                <p class="main-footer__copyright">&copy; ПОВСК г. Архангельск 2020</p>
+                <p class="main-footer__icons">Icons by <a class="main-footer__link"
+                        href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                        class="main-footer__link" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    </div>
+</body>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>

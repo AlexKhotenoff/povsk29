@@ -512,9 +512,10 @@
     font-size: 14px; } }
 
 .advantages {
+  min-height: 522px;
   padding-top: 30px;
   padding-bottom: 30px;
-  min-height: 522px;
+  background-color: #ffffff;
   overflow: hidden; }
 
 .advantages__wrapper {
@@ -772,13 +773,13 @@
 .news {
   padding: 30px 15px;
   background-color: #ffffff;
-  background-image: url("../img/background/camo.png");
+  background-image: url("../img/background/hexagon.png");
   background-position: center; }
 
 .news_page {
   min-height: 80vh;
   background-color: #ebebeb;
-  background-image: none; }
+  background-image: url("../img/background/hexagon.png"); }
 
 .news__container {
   display: flex;
@@ -803,7 +804,8 @@
 
 .news__post {
   width: 100%;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
 
 .news__post_block-short {
   width: 520px; }
@@ -1318,7 +1320,8 @@
 .for-recruits {
   margin: 0;
   padding: 30px 15px;
-  background-color: rgba(107, 123, 109, 0.1); }
+  background-color: rgba(107, 123, 109, 0.1);
+  background-image: url("../img/background/hexagon.png"); }
 
 .for-recruits__title {
   margin: 0;
@@ -1359,6 +1362,9 @@
   margin: 0;
   margin-bottom: 10px;
   padding: 0;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
   color: #000000; }
 
 .content-card__description {
@@ -1404,7 +1410,8 @@
 .requirements {
   margin: 0;
   padding: 30px 15px;
-  background-color: rgba(107, 123, 109, 0.1); }
+  background-color: rgba(107, 123, 109, 0.1);
+  background-image: url("../img/background/hexagon.png"); }
 
 .requirements__list {
   margin: 0;
@@ -1466,7 +1473,8 @@
 .documents {
   margin: 0;
   padding: 30px 15px;
-  background-color: rgba(107, 123, 109, 0.1); }
+  background-color: rgba(107, 123, 109, 0.1);
+  background-image: url("../img/background/hexagon.png"); }
 
 .documents__title {
   margin: 0;
@@ -1500,6 +1508,7 @@
   margin-bottom: 20px;
   padding: 0;
   padding: 15px;
+  padding-top: 20px;
   background-color: #ffffff;
   box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
 
@@ -1593,7 +1602,8 @@
     padding-left: 10;
     padding-right: 10; }
   .documents__item {
-    padding: 15px 10px; }
+    padding: 15px 10px;
+    padding-top: 20px; }
   .documents__item_sub-item {
     margin-bottom: 15px;
     padding: 0; }
@@ -1604,6 +1614,108 @@
     height: 25px; }
   .documents__link-caption {
     display: none; } }
+
+.sport {
+  margin: 0;
+  padding: 30px 15px;
+  background-color: rgba(107, 123, 109, 0.1);
+  background-image: url("../img/background/hexagon.png"); }
+
+.sport__title {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000; }
+
+.sport__example-wrapper {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
+
+.sport__list {
+  margin: 0;
+  padding: 0; }
+
+.sport__list_blocks {
+  display: flex;
+  justify-content: space-between; }
+
+.sport__item {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  list-style: none; }
+  .sport__item_block-type {
+    width: 33%;
+    margin-bottom: 15px; }
+  .sport__item_exercise {
+    margin-bottom: 10px; }
+  .sport__item_age {
+    display: flex;
+    margin-bottom: 5px; }
+  .sport__item_example {
+    margin-bottom: 5px; }
+
+.sport__block-name {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  padding: 10px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #354d38; }
+
+.sport__exercise-name {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  padding: 10px;
+  background-color: #ececec; }
+
+.sport__age-limit {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  padding: 10px;
+  background-color: #e6dab7; }
+
+.sport__result {
+  width: 50%;
+  margin: 0;
+  margin-left: 5px;
+  padding: 0;
+  padding: 10px;
+  text-align: center;
+  background-color: #a0c49f; }
+
+.sport__applicant-type {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
+
+.sport__subtitle {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000; }
+
+@media (max-width: 767px) {
+  .sport__list_blocks {
+    display: block; }
+  .sport__item_block-type {
+    width: 100%; } }
 
 .underconstruct__title {
   width: 60%;

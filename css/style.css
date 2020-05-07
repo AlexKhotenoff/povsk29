@@ -454,7 +454,8 @@
   flex-direction: column;
   justify-content: center;
   padding: 30px 15px;
-  background-image: url("../img/background/camo.png");
+  background-color: #ffffff;
+  background-image: url("../img/background/hexagon.png");
   background-position: center; }
 
 .about-contract__container {
@@ -516,6 +517,7 @@
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: #ffffff;
+  background-image: url("../img/background/stars_big.png");
   overflow: hidden; }
 
 .advantages__wrapper {
@@ -705,7 +707,7 @@
   line-height: 36px;
   font-weight: 400;
   text-transform: uppercase;
-  color: #354d38; }
+  color: #000000; }
 
 .advantages-description__text {
   margin: 0;
@@ -1655,7 +1657,7 @@
     width: 33%;
     margin-bottom: 15px; }
   .sport__item_exercise {
-    margin-bottom: 10px; }
+    margin-bottom: 5px; }
   .sport__item_age {
     display: flex;
     margin-bottom: 5px; }
@@ -1712,11 +1714,33 @@
   text-transform: uppercase;
   color: #000000; }
 
+.sport__footnote {
+  font-style: italic;
+  font-weight: 700;
+  text-decoration: underline; }
+
 @media (max-width: 767px) {
   .sport__list_blocks {
     display: block; }
   .sport__item_block-type {
     width: 100%; } }
+
+.garanties {
+  margin: 0;
+  padding: 30px 15px;
+  background-color: rgba(107, 123, 109, 0.1);
+  background-image: url("../img/background/hexagon.png"); }
+
+.garanties__title {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000; }
 
 .underconstruct__title {
   width: 60%;

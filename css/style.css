@@ -1725,13 +1725,13 @@
   .sport__item_block-type {
     width: 100%; } }
 
-.garanties {
+.guaranties {
   margin: 0;
   padding: 30px 15px;
   background-color: rgba(107, 123, 109, 0.1);
   background-image: url("../img/background/hexagon.png"); }
 
-.garanties__title {
+.guaranties__title {
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
@@ -1741,6 +1741,112 @@
   line-height: 30px;
   text-transform: uppercase;
   color: #000000; }
+
+.guaranties__list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.guaranties__item {
+  min-height: 250px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 98% bottom;
+  background-size: 200px;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
+
+.guaranties__item_money {
+  background-image: url("../img/icons/svg/wallet.svg"); }
+
+.guaranties__item_food {
+  background-image: url("../img/icons/svg/food.svg"); }
+
+.guaranties__item_vacation {
+  background-image: url("../img/icons/svg/plane-tickets.svg"); }
+
+.guaranties__item_house {
+  background-image: url("../img/icons/svg/house.svg"); }
+
+.guaranties__item_uniform {
+  background-image: url("../img/icons/svg/uniform.svg"); }
+
+.guaranties__item_pharmacy {
+  background-image: url("../img/icons/svg/pharmacy.svg"); }
+
+.guaranties__item_retirement {
+  background-image: url("../img/icons/svg/retirement.svg"); }
+
+.guaranties__item_insurance {
+  background-image: url("../img/icons/svg/insurance.svg"); }
+
+.guaranties__subtitle {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  text-transform: uppercase; }
+
+.guaranties__description {
+  margin: 0;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000; }
+
+.guaranties__content-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.guaranties__content-item {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  padding-left: 20px;
+  background-color: transparent;
+  box-shadow: none; }
+  .guaranties__content-item::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: calc(50% - 2px);
+    width: 12px;
+    height: 4px;
+    background-color: #354d38; }
+
+.guaranties__text-container {
+  width: 70%; }
+
+@media (max-width: 767px) {
+  .guaranties__text-container {
+    width: 100%; }
+  .guaranties__item {
+    min-height: 250px;
+    background-size: contain;
+    background-position: center; }
+  .guaranties__item_money {
+    background-image: url("../img/icons/svg/gr/wallet_gr.svg"); }
+  .guaranties__item_food {
+    background-image: url("../img/icons/svg/gr/food_gr.svg"); }
+  .guaranties__item_vacation {
+    background-image: url("../img/icons/svg/gr/plane-tickets_gr.svg"); }
+  .guaranties__item_house {
+    background-image: url("../img/icons/svg/gr/house_gr.svg"); }
+  .guaranties__item_uniform {
+    background-image: url("../img/icons/svg/gr/uniform_gr.svg"); }
+  .guaranties__item_pharmacy {
+    background-image: url("../img/icons/svg/gr/pharmacy_gr.svg"); }
+  .guaranties__item_retirement {
+    background-image: url("../img/icons/svg/gr/retirement_gr.svg"); }
+  .guaranties__item_insurance {
+    background-image: url("../img/icons/svg/gr/insurance_gr.svg"); } }
 
 .underconstruct__title {
   width: 60%;

@@ -4,36 +4,47 @@ var advantages = document.querySelector('.advantages');
 var init_width;
 
 var nav_list = document.querySelector('.main-nav__list');
-var sub_menu = nav_list.querySelector('.main-nav__list_sub-menu');
+// var sub_menu = nav_list.querySelector('.main-nav__list_sub-menu');
 var toggle_button = document.querySelector('.main-nav__toggle');
 var sandvitch_icon = document.querySelector('.main-nav__sandvitch');
-var dropdown_button = nav_list.querySelectorAll('.main-nav__button_dropdown');
+var nav_dropdown_button = nav_list.querySelectorAll('.main-nav__button_dropdown');
 //end of menu vars
 
-const anchors = document.querySelectorAll('a[href*="#"]')
+//dropdown
+var dropdown_button = document.querySelectorAll('.dropdown');
 
-for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
+dropdown_button.forEach( element => {
+  element.addEventListener ('click', function () {
+    element.classList.toggle('dropdown_active');
+    element.parentElement.parentElement.querySelector('.dropdown__container').classList.toggle('dropdown__container_show');
+  });
+});
+//End of dropdown
 
-    const blockID = anchor.getAttribute('href').substr(1)
+// const anchors = document.querySelectorAll('a[href*="#"]')
 
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  })
-}
+// for (let anchor of anchors) {
+//   anchor.addEventListener('click', function (e) {
+//     e.preventDefault()
+
+//     const blockID = anchor.getAttribute('href').substr(1)
+
+//     document.getElementById(blockID).scrollIntoView({
+//       behavior: 'smooth',
+//       block: 'start'
+//     })
+//   })
+// }
 
 //menu
 toggle_button.addEventListener('click', function () {
   menu_toggle();
 });
 
-dropdown_button.forEach(element => {
+nav_dropdown_button.forEach(element => {
   element.addEventListener('click', function (){
     element.classList.toggle('main-nav__button_dropdown-open');
-    sub_menu.classList.toggle('main-nav__list_sub-menu-open');
+    element.parentElement.parentElement.querySelector('.main-nav__list_sub-menu').classList.toggle('main-nav__list_sub-menu-open');
   });
 });
   

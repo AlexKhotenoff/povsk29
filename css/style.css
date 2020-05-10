@@ -1451,12 +1451,14 @@
     background-image: url("../img/icons/svg/suitability.svg"); }
   .requirement_sport::before {
     background-image: url("../img/icons/svg/sport.svg"); }
+  .requirement_moral::before {
+    background-image: url("../img/icons/svg/moral.svg"); }
 
 .requirement__title {
   margin: 0;
   padding: 0;
   padding: 15px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
   color: #ffffff;
@@ -1473,6 +1475,7 @@
 .requirement__description-list {
   margin: 0;
   padding: 0;
+  padding-left: 15px;
   list-style: none; }
 
 .requirement__description-item {
@@ -1887,6 +1890,123 @@
   .guaranties__item {
     background-size: 50%;
     background-position: right bottom; } }
+
+.steps {
+  margin: 0;
+  padding: 30px 15px;
+  background-color: rgba(107, 123, 109, 0.1);
+  background-image: url("../img/background/hexagon.png"); }
+
+.steps__title {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000; }
+
+.steps__list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.steps__item {
+  margin-bottom: 15px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 98% bottom;
+  background-size: 200px;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
+
+.steps__item-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #354d38; }
+
+.steps__subtitle {
+  position: relative;
+  margin: 0;
+  margin-right: 5px;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: uppercase; }
+  .steps__subtitle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: center;
+    width: 20px;
+    height: 20px; }
+
+.steps__text {
+  margin: 0;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000; }
+
+.steps__description {
+  margin: 0;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000; }
+
+.steps__description_margin {
+  margin-bottom: 15px; }
+
+.steps__content-list {
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 0;
+  padding-left: 15px;
+  list-style: none; }
+
+.steps__content-item {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  padding-left: 25px;
+  background-color: transparent;
+  box-shadow: none; }
+  .steps__content-item::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 10px;
+    width: 12px;
+    height: 4px;
+    background-color: #354d38; }
+
+.steps__text-container {
+  padding: 15px; }
+
+.steps__link {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  text-decoration: underline; }
+
+.steps__footnote {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  font-style: italic;
+  font-weight: 700;
+  text-decoration: underline; }
 
 .dropdown {
   display: flex;

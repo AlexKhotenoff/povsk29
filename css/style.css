@@ -2008,6 +2008,127 @@
   font-weight: 700;
   text-decoration: underline; }
 
+.faq {
+  margin: 0;
+  padding: 30px 15px;
+  background-color: rgba(107, 123, 109, 0.1);
+  background-image: url("../img/background/hexagon.png"); }
+
+.faq__title {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #000000; }
+
+.faq__list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.faq__item {
+  margin-bottom: 15px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 98% bottom;
+  background-size: 200px; }
+
+.faq__item-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent; }
+  .faq__item-header .dropdown__icon::after,
+  .faq__item-header .dropdown__icon::before {
+    background-color: #354d38; }
+
+.faq__subtitle {
+  position: relative;
+  margin: 0;
+  margin-right: 5px;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #354d38;
+  text-transform: uppercase; }
+  .faq__subtitle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: center;
+    width: 20px;
+    height: 20px; }
+
+.faq__text {
+  margin: 0;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000; }
+
+.faq__description {
+  margin: 0;
+  padding: 0;
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000; }
+
+.faq__description_margin {
+  margin-bottom: 15px; }
+
+.faq__content-list {
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 0;
+  padding-left: 15px;
+  list-style: none; }
+
+.faq__content-item {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  padding-left: 25px;
+  background-color: transparent;
+  box-shadow: none; }
+  .faq__content-item::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 10px;
+    width: 12px;
+    height: 4px;
+    background-color: #354d38; }
+
+.faq__text-container {
+  padding: 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
+
+.faq__link {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  text-decoration: underline; }
+
+.faq__footnote {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  font-style: italic;
+  font-weight: 700;
+  text-decoration: underline; }
+
 .dropdown {
   display: flex;
   align-items: center;
@@ -2026,7 +2147,8 @@
 .dropdown__icon {
   position: relative;
   width: 19px;
-  height: 19px; }
+  height: 19px;
+  cursor: pointer; }
   .dropdown__icon::before {
     content: "";
     position: absolute;
@@ -2049,9 +2171,11 @@
 
 @keyframes dropdown-container-show {
   0% {
-    max-height: 0px; }
+    max-height: 0px;
+    opacity: 0; }
   50% { }
   100% {
+    opacity: 1;
     max-height: 1000px; } }
 
 .dropdown__container {

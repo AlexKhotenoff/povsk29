@@ -195,6 +195,8 @@
   color: #ffffff; }
   .main-nav__link:hover {
     color: #ddbb44; }
+  .main-nav__link_active {
+    color: #ddbb44; }
 
 .main-nav__list_sub-menu {
   display: none;
@@ -2038,7 +2040,6 @@
   background-size: 200px; }
 
 .faq__item-header {
-  padding: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2111,6 +2112,7 @@
     background-color: #354d38; }
 
 .faq__text-container {
+  margin-bottom: 30px;
   padding: 15px;
   background-color: #ffffff;
   box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }

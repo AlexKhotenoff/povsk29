@@ -2184,6 +2184,111 @@
     display: block;
     animation: dropdown-container-show 1s normal; }
 
+.money-calc {
+  margin: 0;
+  padding: 30px 15px;
+  background-color: rgba(107, 123, 109, 0.1);
+  background-image: url("../img/background/hexagon.png"); }
+
+.money-calc__switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 15px; }
+
+.money-calc__switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  transition: background-color 0.5s;
+  cursor: pointer; }
+  .money-calc__switch::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: center;
+    width: 20px;
+    height: 20px;
+    background-color: #354d38;
+    transition: all 0.5s; }
+  .money-calc__switch:checked {
+    background-color: #ddbb44; }
+  .money-calc__switch:checked::after {
+    left: calc(100% - 20px); }
+
+.money-calc__list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.money-calc__item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: 98% bottom;
+  background-size: 200px;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
+
+.money-calc__label {
+  padding: 10px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #354d38; }
+
+.money-calc__label_switch {
+  margin-right: 5px;
+  padding: 0px;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: transparent; }
+
+.money-calc__select {
+  padding: 10px;
+  padding-right: 25px;
+  color: #000000;
+  border: none;
+  background-color: #ffffff;
+  background-image: url("../img/icons/svg/down-arrow_black.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 5px) center;
+  background-size: 15px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none; }
+
+@keyframes extend-show {
+  0% {
+    opacity: 0.5;
+    max-height: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    max-height: 400px; } }
+
+@keyframes extend-close {
+  0% {
+    opacity: 1;
+    max-height: 400px; }
+  50% {
+    opacity: 0.8; }
+  100% {
+    opacity: 0;
+    height: 0; } }
+
+.money-calc__extend {
+  display: none;
+  animation: extend-close 0.5s normal; }
+
+.money-calc__extend-show {
+  display: flex;
+  animation: extend-show 0.8s normal; }
+
 .underconstruct__title {
   width: 60%;
   margin: 0;

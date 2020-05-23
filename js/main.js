@@ -162,14 +162,19 @@ function advantages_init(advantages_block) {
 $(document).ready(function () {
   init_width = window.outerWidth;
 
-  $('.bxslider').bxSlider({
-    adaptiveHeight: true,
-    controls: true,
-    pager: true,
-    video: true,
-    minSlides: 1,
-    infiniteLoop: true,
-  });
+  var slider = document.querySelector('.bxslider');
+
+  if (slider) {
+    $('.bxslider').bxSlider({
+      adaptiveHeight: true,
+      controls: true,
+      pager: true,
+      video: true,
+      minSlides: 1,
+      infiniteLoop: true,
+    });
+  }
+
 });
 
 //yandex.maps
@@ -177,12 +182,15 @@ var map_container = document.querySelector('.contacts__map-container');
 var map_overlay = document.querySelector('.contacts__map-overlay');
 var overlay_button = document.querySelector('.contacts__map-overlay-button');
 
-//close map overlay button
-overlay_button.addEventListener('click', function () {
-  if (map_overlay.classList.contains('contacts__map-overlay_active')) {
-    map_overlay.classList.remove('contacts__map-overlay_active');
-  }
-});
+if (overlay_button) {
+  //close map overlay button
+  overlay_button.addEventListener('click', function () {
+    if (map_overlay.classList.contains('contacts__map-overlay_active')) {
+      map_overlay.classList.remove('contacts__map-overlay_active');
+    }
+  });
+}
+
 
 try {
   //yandex.maps API
@@ -229,12 +237,202 @@ catch {
   console.log("Yandex maps is not defined at this page");
 }
 
-// //close mobile menu if window is resized
-// window.addEventListener("resize", function () {
-//     menu_close();
-// }, false);
-
 //close mobile menu if window is orientation changed
 window.addEventListener("orientationchange", function () {
   menu_close();
 }, false);
+
+
+//calc
+var money_calc_block = document.querySelector(".money-calc");
+
+if (money_calc_block) {
+  var request_url = 'js/money_calc_params.json';
+  var request = new XMLHttpRequest();
+  request.open('GET', request_url);
+  request.responseType = 'json';
+  request.send();
+
+  request.onload = function () {
+    var mcp = request.response;
+
+    money_calc_init(money_calc_block, mcp);
+  };
+}
+
+function money_calc_init(money_calc, calc_params) {
+
+  var money_calc_switch = money_calc.querySelector(".money-calc__switch");
+  var rank_select = money_calc.querySelector(".money-calc__select_rank");
+  var pay_grade_select = money_calc.querySelector(".money-calc__select_pay-grade");
+  var period_select = money_calc.querySelector(".money-calc__select_period");
+  var qualification_select = money_calc.querySelector(".money-calc__select_qualification");
+  var secret_select = money_calc.querySelector(".money-calc__select_secret");
+  var secret_period_select = money_calc.querySelector(".money-calc__select_secret-period");
+  var cypher_period_select = money_calc.querySelector(".money-calc__select_cypher-period");
+  var sport_select = money_calc.querySelector(".money-calc__select_sport");
+  var prize_range_select = money_calc.querySelector(".money-calc__select_prize-range");
+  var legal_education_select = money_calc.querySelector(".money-calc__select_legal-education");
+  var risk_range_select = money_calc.querySelector(".money-calc__select_risk-range");
+  var spec_achievement_range_select = money_calc.querySelector(".money-calc__select_spec-achievement");
+  var spec_conditions_range_select = money_calc.querySelector(".money-calc__select_spec-conditions");
+  var region_select = money_calc.querySelector(".money-calc__select_region");
+  var north_range_select = money_calc.querySelector(".money-calc__select_north-range");
+
+  money_calc_switch.addEventListener("change", function () {
+    var extend_block = money_calc.querySelectorAll(".money-calc__extend");
+
+    if (money_calc_switch.checked) {
+      extend_block.forEach(element => {
+        element.classList.add("money-calc__extend-show");
+      });
+    }
+    else {
+      extend_block.forEach(element => {
+        element.classList.remove("money-calc__extend-show");
+      });
+    }
+  });
+
+  for (var i = 0; i < calc_params.rank_list.length; i++) {
+    var option = document.createElement('option');
+    option.textContent = calc_params.rank_list[i].caption;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", calc_params.rank_list[i].value);
+
+    rank_select.appendChild(option);
+  }
+
+  for (var i = 0; i < calc_params.pay_grade_list.length; i++) {
+    var option = document.createElement('option');
+    option.textContent = calc_params.pay_grade_list[i].caption;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", calc_params.pay_grade_list[i].value);
+
+    pay_grade_select.appendChild(option);
+  }
+
+  for (var i = 0; i < calc_params.period_list.length; i++) {
+    var option = document.createElement('option');
+    option.textContent = calc_params.period_list[i].caption;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", calc_params.period_list[i].value);
+
+    period_select.appendChild(option);
+  }
+
+  for (var i = 0; i < calc_params.qualification_list.length; i++) {
+    var option = document.createElement('option');
+    option.textContent = calc_params.qualification_list[i].caption;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", calc_params.qualification_list[i].value);
+
+    qualification_select.appendChild(option);
+  }
+
+  for (var i = 0; i < calc_params.secret_list.length; i++) {
+    var option = document.createElement('option');
+    option.textContent = calc_params.secret_list[i].caption;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", calc_params.secret_list[i].value);
+
+    secret_select.appendChild(option);
+  }
+
+  for (var i = 0; i < calc_params.secret_period_list.length; i++) {
+    var option = document.createElement('option');
+    option.textContent = calc_params.secret_period_list[i].caption;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", calc_params.secret_period_list[i].value);
+
+    secret_period_select.appendChild(option);
+  }
+
+  for (var i = 0; i < calc_params.cypher_period_list.length; i++) {
+    var option = document.createElement('option');
+    option.textContent = calc_params.cypher_period_list[i].caption;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", calc_params.cypher_period_list[i].value);
+
+    cypher_period_select.appendChild(option);
+  }
+
+  for (var i = 0; i < calc_params.sport_list.length; i++) {
+    var option = document.createElement('option');
+    option.textContent = calc_params.sport_list[i].caption;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", calc_params.sport_list[i].value);
+
+    sport_select.appendChild(option);
+  }
+
+  for (var i = calc_params.prize_range.min; i <= calc_params.prize_range.max; i += calc_params.prize_range.step) {
+
+    var option = document.createElement('option');
+    option.textContent = i + calc_params.prize_range.unit;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", (i / 100));
+
+    prize_range_select.appendChild(option);
+  }
+
+  for (var i = 0; i < calc_params.legal_education_list.length; i++) {
+    var option = document.createElement('option');
+    option.textContent = calc_params.legal_education_list[i].caption;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", calc_params.legal_education_list[i].value);
+
+    legal_education_select.appendChild(option);
+  }
+
+  for (var i = calc_params.risk_range.min; i <= calc_params.risk_range.max; i += calc_params.risk_range.step) {
+
+    var option = document.createElement('option');
+    option.textContent = i + calc_params.risk_range.unit;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", (i / 100));
+
+    risk_range_select.appendChild(option);
+  }
+
+  for (var i = calc_params.spec_achievement_range.min; i <= calc_params.spec_achievement_range.max; i += calc_params.spec_achievement_range.step) {
+
+    var option = document.createElement('option');
+    option.textContent = i + calc_params.spec_achievement_range.unit;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", (i / 100));
+
+    spec_achievement_range_select.appendChild(option);
+  }
+
+  for (var i = calc_params.spec_conditions_range.min; i <= calc_params.spec_conditions_range.max; i += calc_params.spec_conditions_range.step) {
+
+    var option = document.createElement('option');
+    option.textContent = i + calc_params.spec_conditions_range.unit;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", (i / 100));
+
+    spec_conditions_range_select.appendChild(option);
+  }
+
+  for (var i = 0; i < calc_params.region_list.length; i++) {
+    var option = document.createElement('option');
+    option.textContent = calc_params.region_list[i].caption;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", calc_params.region_list[i].value);
+
+    region_select.appendChild(option);
+  }
+
+  for (var i = calc_params.north_range.min; i <= calc_params.north_range.max; i += calc_params.north_range.step) {
+
+    var option = document.createElement('option');
+    option.textContent = i + calc_params.north_range.unit;
+    option.setAttribute("class", "money-calc__option");
+    option.setAttribute("value", (i / 100));
+
+    north_range_select.appendChild(option);
+  }
+}
+
+//end of calc

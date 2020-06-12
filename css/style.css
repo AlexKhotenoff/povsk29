@@ -260,7 +260,8 @@
   margin-left: auto;
   padding: 0;
   background-color: transparent;
-  border: none; }
+  border: none;
+  cursor: pointer; }
 
 @keyframes sandvitch-top-on {
   0% {
@@ -2221,6 +2222,7 @@
 
 .money-calc__list {
   margin: 0;
+  margin-bottom: 30px;
   padding: 0;
   list-style: none; }
 
@@ -2262,6 +2264,27 @@
   -webkit-appearance: none;
   appearance: none; }
 
+.money-calc__button {
+  display: inline-block;
+  padding: 14px 44px;
+  height: 50px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  border: none;
+  background-color: #354d38; }
+  .money-calc__button:hover {
+    background-color: #2d412f; }
+  .money-calc__button:active {
+    background-color: #3f5842; }
+  .money-calc__button:disabled, .money-calc__button_disabled, .money-calc__button_disabled:hover, .money-calc__button_disabled:active {
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #32425c;
+    border: none;
+    opacity: 0.3;
+    cursor: default; }
+
 @keyframes extend-show {
   0% {
     opacity: 0.5;
@@ -2288,6 +2311,29 @@
 .money-calc__extend-show {
   display: flex;
   animation: extend-show 0.8s normal; }
+
+.money-calc__result-container {
+  display: flex;
+  justify-content: space-between; }
+
+.money-calc__result-wrapper {
+  min-width: 50%; }
+
+.money-calc__result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px; }
+
+.money-calc__result-caption {
+  margin-right: 10px;
+  font-size: 40px; }
+
+.money-calc__calc-result {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 40px; }
 
 .underconstruct__title {
   width: 60%;

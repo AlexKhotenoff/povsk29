@@ -262,7 +262,11 @@ if (money_calc_block) {
 
 function money_calc_init(money_calc, calc_params) {
 
+  var money_calc_select = money_calc.querySelectorAll(".money-calc__select");
   var money_calc_switch = money_calc.querySelector(".money-calc__switch");
+  var money_calc_result = money_calc.querySelector(".money-calc__calc-result");
+  var money_calc_button = money_calc.querySelector(".money-calc__button");
+  
   var rank_select = money_calc.querySelector(".money-calc__select_rank");
   var pay_grade_select = money_calc.querySelector(".money-calc__select_pay-grade");
   var period_select = money_calc.querySelector(".money-calc__select_period");
@@ -279,19 +283,31 @@ function money_calc_init(money_calc, calc_params) {
   var region_select = money_calc.querySelector(".money-calc__select_region");
   var north_range_select = money_calc.querySelector(".money-calc__select_north-range");
 
+  var extend_select = money_calc.querySelectorAll(".money-calc__extend");
+
   money_calc_switch.addEventListener("change", function () {
-    var extend_block = money_calc.querySelectorAll(".money-calc__extend");
+
+    money_calc_select.forEach(element => {
+      element.options.selectedIndex = 0;
+    });
 
     if (money_calc_switch.checked) {
-      extend_block.forEach(element => {
+      extend_select.forEach(element => {
         element.classList.add("money-calc__extend-show");
       });
     }
     else {
-      extend_block.forEach(element => {
+      extend_select.forEach(element => {
         element.classList.remove("money-calc__extend-show");
       });
     }
+  });
+
+  money_calc_button.addEventListener("click", function (evt) {
+    evt.preventDefault();
+
+    var calc_form = money_calc.querySelector(".money-calc__form");
+    money_calc_result.textContent = " " + calc_money(calc_form) + " р.";
   });
 
   for (var i = 0; i < calc_params.rank_list.length; i++) {
@@ -302,7 +318,7 @@ function money_calc_init(money_calc, calc_params) {
 
     rank_select.appendChild(option);
   }
-
+ 
   for (var i = 0; i < calc_params.pay_grade_list.length; i++) {
     var option = document.createElement('option');
     option.textContent = calc_params.pay_grade_list[i].caption;
@@ -433,6 +449,50 @@ function money_calc_init(money_calc, calc_params) {
 
     north_range_select.appendChild(option);
   }
+}
+
+function calc_money(calc_form) {
+
+  var rank = parseInt(calc_form.rank.value); //Оклад по воинскому званию
+  var pay_grade = parseInt(calc_form.pay_grade.value); //Оклад по воинской должности
+
+  var period = parseFloat(calc_form.period.value);
+  var qualification = parseFloat(calc_form.qualification.value);
+  var secret = parseFloat(calc_form.secret.value);
+  var secret_period = parseFloat(calc_form.secret_period.value);
+  var cypher_period = parseFloat(calc_form.cypher_period.value);
+  var sport = parseFloat(calc_form.sport.value);
+  var prize_range = parseFloat(calc_form.prize_range.value);
+  var legal_education = parseFloat(calc_form.legal_education.value);
+  var risk_range = parseFloat(calc_form.risk_range.value);
+  var spec_achievement_range = parseFloat(calc_form.spec_achievement.value);
+  var spec_conditions_range = parseFloat(calc_form.spec_conditions.value);
+  var region = parseFloat(calc_form.region.value);
+  var north_range = parseFloat(calc_form.north_range.value);
+
+
+
+  var basic_pay = 0; //Оклад денежного содержания
+
+  if ((rank >= 0) && (pay_grade >= 0)) {
+    basic_pay = rank + pay_grade;
+    console.log("Оклад денежного содержания: " + basic_pay);
+  }
+
+  if (period >= 0) {
+    console.log("Надбавка за выслугу лет: " + period);
+  }
+
+  if (qualification >= 0) {
+    console.log("Надбавка за классную квалификацию: " + qualification);
+  }
+
+  if (secret >= 0) {
+    console.log("Надбавка за работу со сведениями, составляющими государственную тайну: " + qualification);
+  }
+
+  return basic_pay;
+
 }
 
 //end of calc

@@ -480,15 +480,39 @@ function calc_money(calc_form) {
   }
 
   if (period >= 0) {
-    console.log("Надбавка за выслугу лет: " + period);
+    console.log("Надбавка за выслугу лет: " + (basic_pay * period));
   }
 
   if (qualification >= 0) {
-    console.log("Надбавка за классную квалификацию: " + qualification);
+    console.log("Надбавка за классную квалификацию: " + (pay_grade * qualification));
   }
 
   if (secret >= 0) {
-    console.log("Надбавка за работу со сведениями, составляющими государственную тайну: " + qualification);
+    console.log("Надбавка за работу со сведениями, составляющими государственную тайну: " + (pay_grade * secret));
+  }
+
+  if (secret_period >= 0) {
+    console.log("Надбавка за стаж работы в подразделениях ЗГТ: " + (pay_grade * secret_period));
+  }
+
+  if (cypher_period >= 0) {
+    console.log("Надбавка за стаж работы в шифроорганах: " + (pay_grade * cypher_period));
+  }
+
+  if (sport >= 0) {
+    console.log("Надбавка за квалификационный уровень по физической подготовке: " + (pay_grade * sport));
+  }
+
+  if (prize_range >= 0) {
+    console.log("Премия за добросовестное исполнение должностных обязанностей: " + (basic_pay * prize_range));
+  }
+
+  if (legal_education >= 0) {
+    console.log("Надбавка военнослужащим, имеющим высшее юридическое образование и занимающим воинские должности юридической специальности: " + (pay_grade * legal_education));
+  }
+
+  if (risk_range >= 0) {
+    console.log("Надбавка за выполнение задач, непосредственно связанных с риском для жизни и здоровья в мирное время: " + (pay_grade * risk_range));
   }
 
   return basic_pay;

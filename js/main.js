@@ -124,14 +124,21 @@ function menu_close() {
 //end of menu
 
 //advantages tabs
+let advantages_buttons;
+let description_items;
+let advantages_selected = 0;
+let advantages_scroll_timer;
+
 if (advantages) {
+  advantages_buttons = advantages.querySelectorAll(".advantages-list__button");
+  description_items = advantages.querySelectorAll(".advantages-description__item");
+
   advantages_init(advantages);
+
+  advantages_scroll_timer = setInterval(advantages_autoscroll, 2000, 0);
 }
 
 function advantages_init(advantages_block) {
-  var advantages_buttons = advantages_block.querySelectorAll(".advantages-list__button");
-  var description_items = advantages_block.querySelectorAll(".advantages-description__item");
-
   for (var i = 0; i < advantages_buttons.length; i++) {
     advantages_buttons[i].addEventListener("click", function (evt) {
 
@@ -150,10 +157,26 @@ function advantages_init(advantages_block) {
       for (m = 0; m < advantages_buttons.length; m++) {
         if (advantages_buttons[m].classList.contains("advantages-list__button_active")) {
           description_items[m].classList.add("advantages-description__item_show");
+          advantages_selected = m;
+          clearInterval(advantages_scroll_timer);
+          advantages_scroll_timer = setInterval(advantages_autoscroll, 5000, m);
         }
       }
+
     });
   }
+}
+
+function advantages_autoscroll(selectedIndex) {
+  if (selectedIndex < advantages_buttons.length - 1) {
+    selectedIndex += 1;
+  }
+  else {
+    selectedIndex = 0;
+  }
+
+  let click_event = new Event("click");
+  advantages_buttons[selectedIndex].dispatchEvent(click_event);
 }
 
 //slider
@@ -266,7 +289,7 @@ function money_calc_init(money_calc, calc_params) {
   var money_calc_switch = money_calc.querySelector(".money-calc__switch");
   var money_calc_result = money_calc.querySelector(".money-calc__calc-result");
   var money_calc_button = money_calc.querySelector(".money-calc__button");
-  
+
   var rank_select = money_calc.querySelector(".money-calc__select_rank");
   var pay_grade_select = money_calc.querySelector(".money-calc__select_pay-grade");
   var period_select = money_calc.querySelector(".money-calc__select_period");
@@ -318,7 +341,7 @@ function money_calc_init(money_calc, calc_params) {
 
     rank_select.appendChild(option);
   }
- 
+
   for (var i = 0; i < calc_params.pay_grade_list.length; i++) {
     var option = document.createElement('option');
     option.textContent = calc_params.pay_grade_list[i].caption;

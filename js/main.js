@@ -135,7 +135,7 @@ if (advantages) {
 
   advantages_init(advantages);
 
-  advantages_scroll_timer = setInterval(advantages_autoscroll, 2000, 0);
+  advantages_scroll_timer = setInterval(advantages_autoscroll, 5000, 0);
 }
 
 function advantages_init(advantages_block) {
@@ -496,22 +496,31 @@ function calc_money(calc_form) {
 
 
   var basic_pay = 0; //Оклад денежного содержания
+  var period_pay = 0; //Выслуга лет
+  var qualification_pay = 0; //Классная квалификация
+  var secret_pay = 0; //Сведения составляющие гос. тайну
+  var spec_conditions_pay = 0; //ОУС
+  var region_pay = 0; //Районный коэффициент
+  var north_range_pay = 0; //Северная надбавка
 
   if ((rank >= 0) && (pay_grade >= 0)) {
     basic_pay = rank + pay_grade;
-    console.log("Оклад денежного содержания: " + basic_pay);
+    console.log("Оклад денежного содержания: " + basic_pay.toFixed(2));
   }
 
   if (period >= 0) {
-    console.log("Надбавка за выслугу лет: " + (basic_pay * period));
+    period_pay = basic_pay * period;
+    console.log("Надбавка за выслугу лет: " + period_pay.toFixed(2));
   }
 
   if (qualification >= 0) {
-    console.log("Надбавка за классную квалификацию: " + (pay_grade * qualification));
+    qualification_pay = pay_grade * qualification;
+    console.log("Надбавка за классную квалификацию: " + qualification_pay.toFixed(2));
   }
 
   if (secret >= 0) {
-    console.log("Надбавка за работу со сведениями, составляющими государственную тайну: " + (pay_grade * secret));
+    secret_pay = pay_grade * secret;
+    console.log("Надбавка за работу со сведениями, составляющими государственную тайну: " + secret_pay.toFixed(2));
   }
 
   if (secret_period >= 0) {
@@ -536,6 +545,30 @@ function calc_money(calc_form) {
 
   if (risk_range >= 0) {
     console.log("Надбавка за выполнение задач, непосредственно связанных с риском для жизни и здоровья в мирное время: " + (pay_grade * risk_range));
+  }
+
+  if (spec_achievement_range >= 0) {
+    console.log("Надбавка за особые достижения в военной службе: " + (pay_grade * spec_achievement_range));
+  }
+
+  if (spec_conditions_range >= 0) {
+    spec_conditions_pay = pay_grade * spec_conditions_range;
+    console.log("Надбавка за особые условия военной службы, включая командование подразделением: " + spec_conditions_pay.toFixed(2));
+  }
+
+  if (region >= 0) {
+    region_pay = (basic_pay + period_pay + qualification_pay + secret_pay + spec_conditions_pay) * region;
+    console.log("РАЙОННЫЙ КОЭФФИЦИЕНТ ЗА ВОЕННУЮ СЛУЖБУ В РАЙОНАХ КРАЙНЕГО СЕВЕРА И ПРИРАВНЕННЫХ К НИМ МЕСТНОСТЯХ," +
+   " С НЕБЛАГОПРИЯТНЫМИ ЭКОЛОГИЧЕСКИМИ И КЛИМАТИЧЕСКИМИ УСЛОВИЯМИ, ОТДАЛЕННЫХ, ВЫСОКОГОРНЫХ РАЙОНАХ, ПУСТЫННЫХ" +
+   " И БЕЗВОДНЫХ МЕСТНОСТЯХ: " + 
+    region_pay.toFixed(2));
+  }
+
+  if (north_range >= 0) {
+    north_range_pay = (basic_pay + period_pay + qualification_pay + secret_pay + spec_conditions_pay) * north_range;
+    console.log("НАДБАВКА ЗА ВОЕННУЮ СЛУЖБУ В РАЙОНАХ КРАЙНЕГО СЕВЕРА И ПРИРАВНЕННЫХ К НИМ МЕСТНОСТЯХ," +
+    " А ТАКЖЕ В ДРУГИХ МЕСТНОСТЯХ С НЕБЛАГОПРИЯТНЫМИ КЛИМАТИЧЕСКИМИ ИЛИ ЭКОЛОГИЧЕСКИМИ УСЛОВИЯМИ, В ТОМ" +
+    " ЧИСЛЕ ОТДАЛЕННЫХ МЕСТНОСТЯХ: " + north_range_pay.toFixed(2));
   }
 
   return basic_pay;

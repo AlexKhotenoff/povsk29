@@ -287,6 +287,7 @@ function money_calc_init(money_calc, calc_params) {
 
   var money_calc_select = money_calc.querySelectorAll(".money-calc__select");
   var money_calc_switch = money_calc.querySelector(".money-calc__switch");
+  var result_container = money_calc.querySelector(".money-calc__result-container");
   var money_calc_result = money_calc.querySelector(".money-calc__calc-result");
   var money_calc_on_hand = money_calc.querySelector(".money-calc__on-hand");
   var money_calc_button = money_calc.querySelector(".money-calc__button");
@@ -332,8 +333,17 @@ function money_calc_init(money_calc, calc_params) {
 
     var calc_form = money_calc.querySelector(".money-calc__form");
     var dirt_salary = calc_money(calc_form);
-    money_calc_result.textContent = " " + dirt_salary + " р.";
-    money_calc_on_hand.textContent = " " + round(dirt_salary * 0.87, 2) + " р.";
+
+    if (dirt_salary > 0) {
+
+      if (result_container.classList.contains("money-calc__result-container_shown")) {
+        result_container.classList.remove("money-calc__result-container_shown");
+      }
+      
+      result_container.classList.add("money-calc__result-container_shown");
+      money_calc_result.textContent = " " + (dirt_salary).toFixed(2) + " р.";
+      money_calc_on_hand.textContent = " " + round(dirt_salary * 0.87, 2) + " р.";
+    }
   });
 
   for (var i = 0; i < calc_params.rank_list.length; i++) {
@@ -477,7 +487,7 @@ function money_calc_init(money_calc, calc_params) {
   }
 }
 
-function round(value, decimals){
+function round(value, decimals) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
 
@@ -590,10 +600,10 @@ function calc_money(calc_form) {
       " ЧИСЛЕ ОТДАЛЕННЫХ МЕСТНОСТЯХ: " + north_range_pay.toFixed(2));
   }
 
-  return basic_pay + period_pay + qualification_pay + secret_pay + 
-  secret_period_pay + cypher_period_pay + sport_pay + prize_range_pay +
-   legal_education_pay + risk_range_pay + spec_achievement_pay + 
-   spec_conditions_pay + region_pay + north_range_pay;
+  return basic_pay + period_pay + qualification_pay + secret_pay +
+    secret_period_pay + cypher_period_pay + sport_pay + prize_range_pay +
+    legal_education_pay + risk_range_pay + spec_achievement_pay +
+    spec_conditions_pay + region_pay + north_range_pay;
 
 }
 

@@ -2329,7 +2329,8 @@
   margin-right: 10px;
   font-size: 40px; }
 
-.money-calc__calc-result {
+.money-calc__calc-result,
+.money-calc__on-hand {
   padding: 0;
   margin: 0;
   font-family: inherit;

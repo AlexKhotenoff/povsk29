@@ -288,6 +288,7 @@ function money_calc_init(money_calc, calc_params) {
   var money_calc_select = money_calc.querySelectorAll(".money-calc__select");
   var money_calc_switch = money_calc.querySelector(".money-calc__switch");
   var money_calc_result = money_calc.querySelector(".money-calc__calc-result");
+  var money_calc_on_hand = money_calc.querySelector(".money-calc__on-hand");
   var money_calc_button = money_calc.querySelector(".money-calc__button");
 
   var rank_select = money_calc.querySelector(".money-calc__select_rank");
@@ -330,7 +331,9 @@ function money_calc_init(money_calc, calc_params) {
     evt.preventDefault();
 
     var calc_form = money_calc.querySelector(".money-calc__form");
-    money_calc_result.textContent = " " + calc_money(calc_form) + " р.";
+    var dirt_salary = calc_money(calc_form);
+    money_calc_result.textContent = " " + dirt_salary + " р.";
+    money_calc_on_hand.textContent = " " + round(dirt_salary * 0.87, 2) + " р.";
   });
 
   for (var i = 0; i < calc_params.rank_list.length; i++) {
@@ -474,6 +477,10 @@ function money_calc_init(money_calc, calc_params) {
   }
 }
 
+function round(value, decimals){
+  return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+}
+
 function calc_money(calc_form) {
 
   var rank = parseInt(calc_form.rank.value); //Оклад по воинскому званию
@@ -493,85 +500,100 @@ function calc_money(calc_form) {
   var region = parseFloat(calc_form.region.value);
   var north_range = parseFloat(calc_form.north_range.value);
 
-
-
   var basic_pay = 0; //Оклад денежного содержания
   var period_pay = 0; //Выслуга лет
   var qualification_pay = 0; //Классная квалификация
   var secret_pay = 0; //Сведения составляющие гос. тайну
+  var secret_period_pay = 0; //Стаж в подразделениях ПЗГТ
+  var cypher_period_pay = 0; //Стаж в шифроорганах
+  var sport_pay = 0; //ФП
+  var prize_range_pay = 0; //Премия за добросовестное и эффективное исполнение должностных обязанностей
+  var legal_education_pay = 0; //Высшее юридическое образование
+  var risk_range_pay = 0; //Риск для жизни
+  var spec_achievement_pay = 0; //Особые достижения
   var spec_conditions_pay = 0; //ОУС
   var region_pay = 0; //Районный коэффициент
   var north_range_pay = 0; //Северная надбавка
 
   if ((rank >= 0) && (pay_grade >= 0)) {
-    basic_pay = rank + pay_grade;
+    basic_pay = round(rank + pay_grade, 2);
     console.log("Оклад денежного содержания: " + basic_pay.toFixed(2));
   }
 
   if (period >= 0) {
-    period_pay = basic_pay * period;
+    period_pay = round(basic_pay * period, 2);
     console.log("Надбавка за выслугу лет: " + period_pay.toFixed(2));
   }
 
   if (qualification >= 0) {
-    qualification_pay = pay_grade * qualification;
+    qualification_pay = round(pay_grade * qualification, 2);
     console.log("Надбавка за классную квалификацию: " + qualification_pay.toFixed(2));
   }
 
   if (secret >= 0) {
-    secret_pay = pay_grade * secret;
+    secret_pay = round(pay_grade * secret, 2);
     console.log("Надбавка за работу со сведениями, составляющими государственную тайну: " + secret_pay.toFixed(2));
   }
 
   if (secret_period >= 0) {
-    console.log("Надбавка за стаж работы в подразделениях ЗГТ: " + (pay_grade * secret_period));
+    secret_period_pay = round(pay_grade * secret_period, 2);
+    console.log("Надбавка за стаж работы в подразделениях ЗГТ: " + secret_period_pay.toFixed(2));
   }
 
   if (cypher_period >= 0) {
-    console.log("Надбавка за стаж работы в шифроорганах: " + (pay_grade * cypher_period));
+    cypher_period_pay = round(pay_grade * cypher_period, 2);
+    console.log("Надбавка за стаж работы в шифроорганах: " + cypher_period_pay.toFixed(2));
   }
 
   if (sport >= 0) {
-    console.log("Надбавка за квалификационный уровень по физической подготовке: " + (pay_grade * sport));
+    sport_pay = round(pay_grade * sport, 2);
+    console.log("Надбавка за квалификационный уровень по физической подготовке: " + sport_pay.toFixed(2));
   }
 
   if (prize_range >= 0) {
-    console.log("Премия за добросовестное исполнение должностных обязанностей: " + (basic_pay * prize_range));
+    prize_range_pay = round(basic_pay * prize_range, 2);
+    console.log("Премия за добросовестное исполнение должностных обязанностей: " + prize_range_pay.toFixed(2));
   }
 
   if (legal_education >= 0) {
-    console.log("Надбавка военнослужащим, имеющим высшее юридическое образование и занимающим воинские должности юридической специальности: " + (pay_grade * legal_education));
+    legal_education_pay = round(pay_grade * legal_education, 2);
+    console.log("Надбавка военнослужащим, имеющим высшее юридическое образование и занимающим воинские должности юридической специальности: " + legal_education_pay.toFixed(2));
   }
 
   if (risk_range >= 0) {
-    console.log("Надбавка за выполнение задач, непосредственно связанных с риском для жизни и здоровья в мирное время: " + (pay_grade * risk_range));
+    risk_range_pay = round(pay_grade * risk_range, 2);
+    console.log("Надбавка за выполнение задач, непосредственно связанных с риском для жизни и здоровья в мирное время: " + risk_range_pay.toFixed(2));
   }
 
   if (spec_achievement_range >= 0) {
-    console.log("Надбавка за особые достижения в военной службе: " + (pay_grade * spec_achievement_range));
+    spec_achievement_pay = round(pay_grade * spec_achievement_range, 2);
+    console.log("Надбавка за особые достижения в военной службе: " + spec_achievement_pay.toFixed(2));
   }
 
   if (spec_conditions_range >= 0) {
-    spec_conditions_pay = pay_grade * spec_conditions_range;
+    spec_conditions_pay = round(pay_grade * spec_conditions_range, 2);
     console.log("Надбавка за особые условия военной службы, включая командование подразделением: " + spec_conditions_pay.toFixed(2));
   }
 
   if (region >= 0) {
-    region_pay = (basic_pay + period_pay + qualification_pay + secret_pay + spec_conditions_pay) * region;
+    region_pay = round((basic_pay + period_pay + qualification_pay + secret_pay + spec_conditions_pay) * region, 2);
     console.log("РАЙОННЫЙ КОЭФФИЦИЕНТ ЗА ВОЕННУЮ СЛУЖБУ В РАЙОНАХ КРАЙНЕГО СЕВЕРА И ПРИРАВНЕННЫХ К НИМ МЕСТНОСТЯХ," +
-   " С НЕБЛАГОПРИЯТНЫМИ ЭКОЛОГИЧЕСКИМИ И КЛИМАТИЧЕСКИМИ УСЛОВИЯМИ, ОТДАЛЕННЫХ, ВЫСОКОГОРНЫХ РАЙОНАХ, ПУСТЫННЫХ" +
-   " И БЕЗВОДНЫХ МЕСТНОСТЯХ: " + 
-    region_pay.toFixed(2));
+      " С НЕБЛАГОПРИЯТНЫМИ ЭКОЛОГИЧЕСКИМИ И КЛИМАТИЧЕСКИМИ УСЛОВИЯМИ, ОТДАЛЕННЫХ, ВЫСОКОГОРНЫХ РАЙОНАХ, ПУСТЫННЫХ" +
+      " И БЕЗВОДНЫХ МЕСТНОСТЯХ: " +
+      region_pay.toFixed(2));
   }
 
   if (north_range >= 0) {
-    north_range_pay = (basic_pay + period_pay + qualification_pay + secret_pay + spec_conditions_pay) * north_range;
+    north_range_pay = round((basic_pay + period_pay + qualification_pay + secret_pay + spec_conditions_pay) * north_range, 2);
     console.log("НАДБАВКА ЗА ВОЕННУЮ СЛУЖБУ В РАЙОНАХ КРАЙНЕГО СЕВЕРА И ПРИРАВНЕННЫХ К НИМ МЕСТНОСТЯХ," +
-    " А ТАКЖЕ В ДРУГИХ МЕСТНОСТЯХ С НЕБЛАГОПРИЯТНЫМИ КЛИМАТИЧЕСКИМИ ИЛИ ЭКОЛОГИЧЕСКИМИ УСЛОВИЯМИ, В ТОМ" +
-    " ЧИСЛЕ ОТДАЛЕННЫХ МЕСТНОСТЯХ: " + north_range_pay.toFixed(2));
+      " А ТАКЖЕ В ДРУГИХ МЕСТНОСТЯХ С НЕБЛАГОПРИЯТНЫМИ КЛИМАТИЧЕСКИМИ ИЛИ ЭКОЛОГИЧЕСКИМИ УСЛОВИЯМИ, В ТОМ" +
+      " ЧИСЛЕ ОТДАЛЕННЫХ МЕСТНОСТЯХ: " + north_range_pay.toFixed(2));
   }
 
-  return basic_pay;
+  return basic_pay + period_pay + qualification_pay + secret_pay + 
+  secret_period_pay + cypher_period_pay + sport_pay + prize_range_pay +
+   legal_education_pay + risk_range_pay + spec_achievement_pay + 
+   spec_conditions_pay + region_pay + north_range_pay;
 
 }
 

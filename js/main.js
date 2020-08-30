@@ -287,7 +287,7 @@ function money_calc_init(money_calc, calc_params) {
 
   var money_calc_select = money_calc.querySelectorAll(".money-calc__select");
   var money_calc_switch = money_calc.querySelector(".money-calc__switch");
-  var result_container = money_calc.querySelector(".money-calc__result-container");
+  var result_description = money_calc.querySelector(".money-calc__result-description");
   var money_calc_result = money_calc.querySelector(".money-calc__calc-result");
   var money_calc_on_hand = money_calc.querySelector(".money-calc__on-hand");
   var money_calc_button = money_calc.querySelector(".money-calc__button");
@@ -336,11 +336,22 @@ function money_calc_init(money_calc, calc_params) {
 
     if (dirt_salary > 0) {
 
-      if (result_container.classList.contains("money-calc__result-container_shown")) {
-        result_container.classList.remove("money-calc__result-container_shown");
+      if (result_description.classList.contains("money-calc__result-description_shown")) {
+        result_description.classList.remove("money-calc__result-description_shown");
+        this.classList.remove("money-calc__button_clear");
+        this.textContent = "Рассчитать";
+
+        //Clear all calc form select indexes
+        money_calc_select.forEach(element => {
+          element.options.selectedIndex = 0;
+        });
+      }
+      else {
+        result_description.classList.add("money-calc__result-description_shown");
+        this.classList.add("money-calc__button_clear");
+        this.textContent = "Очистить";
       }
       
-      result_container.classList.add("money-calc__result-container_shown");
       money_calc_result.textContent = " " + (dirt_salary).toFixed(2) + " р.";
       money_calc_on_hand.textContent = " " + round(dirt_salary * 0.87, 2) + " р.";
     }

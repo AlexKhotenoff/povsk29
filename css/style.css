@@ -2342,12 +2342,16 @@
   display: none;
   min-width: 85%;
   padding: 15px;
-  padding-left: 55px;
   background-color: #354d38;
   color: white; }
   .money-calc__result-description_shown {
-    display: block;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     animation: result-show 0.8s normal; }
+
+.money-calc__result-column_clear {
+  align-self: center; }
 
 .money-calc__result-row {
   display: flex;
@@ -2361,14 +2365,21 @@
 .money-calc__result-caption {
   margin-right: 10px;
   font-size: 24px;
-  text-decoration: underline; }
+  text-decoration: underline;
+  text-transform: uppercase; }
 
 .money-calc__calc-result,
-.money-calc__on-hand {
+.money-calc__tax {
   padding: 0;
   margin: 0;
   font-family: inherit;
   font-size: 40px; }
+
+.money-calc__on-hand {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 60px; }
 
 @media (max-width: 575px) {
   @keyframes result-show {
@@ -2390,8 +2401,17 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 1; }
+  .money-calc__result-column_dirt {
+    margin-bottom: 15px; }
   .money-calc__result-row {
-    align-items: center; } }
+    align-items: center; }
+  .money-calc__result-caption {
+    font-size: 16px; }
+  .money-calc__calc-result,
+  .money-calc__tax {
+    font-size: 20px; }
+  .money-calc__on-hand {
+    font-size: 30px; } }
 
 .underconstruct__title {
   width: 60%;

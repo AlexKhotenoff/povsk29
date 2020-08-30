@@ -289,8 +289,9 @@ function money_calc_init(money_calc, calc_params) {
   var money_calc_switch = money_calc.querySelector(".money-calc__switch");
   var result_description = money_calc.querySelector(".money-calc__result-description");
   var money_calc_result = money_calc.querySelector(".money-calc__calc-result");
+  var money_calc_tax = money_calc.querySelector(".money-calc__tax");
   var money_calc_on_hand = money_calc.querySelector(".money-calc__on-hand");
-  var money_calc_button = money_calc.querySelector(".money-calc__button");
+  var money_calc_button = money_calc.querySelector(".money-calc__button_calc");
 
   var rank_select = money_calc.querySelector(".money-calc__select_rank");
   var pay_grade_select = money_calc.querySelector(".money-calc__select_pay-grade");
@@ -352,8 +353,9 @@ function money_calc_init(money_calc, calc_params) {
         this.textContent = "Очистить";
       }
       
-      money_calc_result.textContent = " " + (dirt_salary).toFixed(2) + " р.";
-      money_calc_on_hand.textContent = " " + round(dirt_salary * 0.87, 2) + " р.";
+      money_calc_result.textContent = (dirt_salary).toFixed(2) + " р.";
+      money_calc_tax.textContent = round(dirt_salary * 0.13, 2) + " р.";
+      money_calc_on_hand.textContent = round(dirt_salary * 0.87, 2) + " р.";
     }
   });
 

@@ -287,11 +287,13 @@ function money_calc_init(money_calc, calc_params) {
 
   var money_calc_select = money_calc.querySelectorAll(".money-calc__select");
   var money_calc_switch = money_calc.querySelector(".money-calc__switch");
+  var result_container = money_calc.querySelector(".money-calc__result-container:nth-child(2)");
   var result_description = money_calc.querySelector(".money-calc__result-description");
   var money_calc_result = money_calc.querySelector(".money-calc__calc-result");
   var money_calc_tax = money_calc.querySelector(".money-calc__tax");
   var money_calc_on_hand = money_calc.querySelector(".money-calc__on-hand");
   var money_calc_button = money_calc.querySelector(".money-calc__button_calc");
+  var money_calc_clear = money_calc.querySelector(".money-calc__button_clear");
 
   var rank_select = money_calc.querySelector(".money-calc__select_rank");
   var pay_grade_select = money_calc.querySelector(".money-calc__select_pay-grade");
@@ -337,25 +339,28 @@ function money_calc_init(money_calc, calc_params) {
 
     if (dirt_salary > 0) {
 
-      if (result_description.classList.contains("money-calc__result-description_shown")) {
-        result_description.classList.remove("money-calc__result-description_shown");
-        this.classList.remove("money-calc__button_clear");
-        this.textContent = "Рассчитать";
-
-        //Clear all calc form select indexes
-        money_calc_select.forEach(element => {
-          element.options.selectedIndex = 0;
-        });
-      }
-      else {
+      if (!result_description.classList.contains("money-calc__result-description_shown")) {
         result_description.classList.add("money-calc__result-description_shown");
-        this.classList.add("money-calc__button_clear");
-        this.textContent = "Очистить";
+        result_container.classList.add("money-calc__result-container_shadow")
+        money_calc_clear.classList.add("money-calc__button_clear-shown");
       }
-      
+
       money_calc_result.textContent = (dirt_salary).toFixed(2) + " р.";
       money_calc_tax.textContent = round(dirt_salary * 0.13, 2) + " р.";
       money_calc_on_hand.textContent = round(dirt_salary * 0.87, 2) + " р.";
+    }
+  });
+
+  money_calc_clear.addEventListener("click", function (evt) {
+    if (result_description.classList.contains("money-calc__result-description_shown")) {
+      result_description.classList.remove("money-calc__result-description_shown");
+      result_container.classList.remove("money-calc__result-container_shadow")
+      this.classList.remove("money-calc__button_clear-shown");
+
+      //Clear all calc form select indexes
+      money_calc_select.forEach(element => {
+        element.options.selectedIndex = 0;
+      });
     }
   });
 

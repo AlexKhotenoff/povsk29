@@ -473,7 +473,7 @@
     ],
     "spec_achievement_range": {
         "min": 0,
-        "max": 100,
+        "max": 120,
         "step": 5,
         "unit": "%"
     },

@@ -343,11 +343,35 @@ function money_calc_init(money_calc, calc_params) {
         result_description.classList.add("money-calc__result-description_shown");
         result_container.classList.add("money-calc__result-container_shadow")
         money_calc_clear.classList.add("money-calc__button_clear-shown");
+
+        if (this.classList.contains("money-calc__button_error")) {
+          this.classList.remove("money-calc__button_error");
+        }
       }
 
       money_calc_result.textContent = (dirt_salary).toFixed(2) + " р.";
       money_calc_tax.textContent = round(dirt_salary * 0.13, 2) + " р.";
       money_calc_on_hand.textContent = round(dirt_salary * 0.87, 2) + " р.";
+    }
+    else {
+      this.classList.add("money-calc__button_error");
+      var button_placeholder = money_calc.querySelector(".money-calc__button_calc + span");
+      button_placeholder.classList.add("money-calc__button-placeholder_show");
+
+      var pause = setTimeout(function () {
+        if (money_calc_button.classList.contains("money-calc__button_error")) {
+          money_calc_button.classList.remove("money-calc__button_error");
+        }
+
+        if (button_placeholder.classList.contains("money-calc__button-placeholder_show")) {
+          button_placeholder.classList.remove("money-calc__button-placeholder_show");
+        }
+
+        document.querySelector(".money-calc__form").scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 1600);
     }
   });
 

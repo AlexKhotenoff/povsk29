@@ -289,6 +289,7 @@ function money_calc_init(money_calc, calc_params) {
   var money_calc_switch = money_calc.querySelector(".money-calc__switch");
   var result_container = money_calc.querySelector(".money-calc__result-container:nth-child(2)");
   var result_description = money_calc.querySelector(".money-calc__result-description");
+  var result_wrapper = money_calc.querySelector(".money-calc__result-wrapper");
   var money_calc_result = money_calc.querySelector(".money-calc__calc-result");
   var money_calc_tax = money_calc.querySelector(".money-calc__tax");
   var money_calc_on_hand = money_calc.querySelector(".money-calc__on-hand");
@@ -339,8 +340,8 @@ function money_calc_init(money_calc, calc_params) {
 
     if (dirt_salary > 0) {
 
-      if (!result_description.classList.contains("money-calc__result-description_shown")) {
-        result_description.classList.add("money-calc__result-description_shown");
+      if (!result_wrapper.classList.contains("money-calc__result-wrapper_shown")) {
+        result_wrapper.classList.add("money-calc__result-wrapper_shown");
         result_container.classList.add("money-calc__result-container_shadow")
         money_calc_clear.classList.add("money-calc__button_clear-shown");
 
@@ -376,8 +377,8 @@ function money_calc_init(money_calc, calc_params) {
   });
 
   money_calc_clear.addEventListener("click", function (evt) {
-    if (result_description.classList.contains("money-calc__result-description_shown")) {
-      result_description.classList.remove("money-calc__result-description_shown");
+    if (result_wrapper.classList.contains("money-calc__result-wrapper_shown")) {
+      result_wrapper.classList.remove("money-calc__result-wrapper_shown");
       result_container.classList.remove("money-calc__result-container_shadow")
       this.classList.remove("money-calc__button_clear-shown");
 

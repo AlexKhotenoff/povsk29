@@ -2381,7 +2381,7 @@
 
 .money-calc__result-container_shadow {
   background-color: #ffffff;
-  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
 
 .money-calc__result-container:first-child {
   display: flex;
@@ -2446,6 +2446,31 @@
   margin: 0;
   font-family: inherit;
   font-size: 60px; }
+
+.billing-list {
+  background-color: #ffffff;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1); }
+
+.billing-list__list {
+  margin: 0;
+  padding: 0;
+  padding: 10px;
+  list-style: none; }
+
+.billing-list__item {
+  display: flex; }
+
+.billing-list__item-container_name {
+  width: 60%; }
+
+.billing-list__item-container_values {
+  display: flex;
+  justify-content: space-between;
+  width: 40%; }
+
+.billing-list__name {
+  margin: 0;
+  padding: 0; }
 
 @media (max-width: 575px) {
   @keyframes result-show {

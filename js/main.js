@@ -348,9 +348,16 @@ function money_calc_init(money_calc, calc_params) {
         result_container.classList.add("money-calc__result-container_shadow")
         money_calc_clear.classList.add("money-calc__button_clear-shown");
 
+
         if (this.classList.contains("money-calc__button_error")) {
           this.classList.remove("money-calc__button_error");
         }
+      }
+
+      var bil_list = document.querySelector(".billing-list");
+      bil_list.innerHTML = "";
+      if (bil_list.classList.contains("billing-list_shown")) {
+        bil_list.classList.remove("billing-list_shown");
       }
 
       money_calc_result.textContent = (dirt_salary).toFixed(2) + " р.";
@@ -385,6 +392,12 @@ function money_calc_init(money_calc, calc_params) {
       result_container.classList.remove("money-calc__result-container_shadow")
       this.classList.remove("money-calc__button_clear-shown");
 
+      var bil_list = document.querySelector(".billing-list");
+      bil_list.innerHTML = "";
+      if (bil_list.classList.contains("billing-list_shown")) {
+        bil_list.classList.remove("billing-list_shown");
+      }
+
       //Clear all calc form select indexes
       money_calc_select.forEach(element => {
         element.options.selectedIndex = 0;
@@ -396,6 +409,12 @@ function money_calc_init(money_calc, calc_params) {
   });
 
   money_calc_more.addEventListener("click", function () {
+    var bil_list = document.querySelector(".billing-list");
+    bil_list.innerHTML = "";
+    if (!bil_list.classList.contains("billing-list_shown")) {
+      bil_list.classList.add("billing-list_shown");
+    }
+
     print_billing_list(billing_list);
   });
 

@@ -345,7 +345,7 @@ function money_calc_init(money_calc, calc_params) {
 
       if (!result_wrapper.classList.contains("money-calc__result-wrapper_shown")) {
         result_wrapper.classList.add("money-calc__result-wrapper_shown");
-        result_container.classList.add("money-calc__result-container_shadow")
+        // result_container.classList.add("money-calc__result-container_shadow")
         money_calc_clear.classList.add("money-calc__button_clear-shown");
 
 
@@ -389,7 +389,7 @@ function money_calc_init(money_calc, calc_params) {
   money_calc_clear.addEventListener("click", function (evt) {
     if (result_wrapper.classList.contains("money-calc__result-wrapper_shown")) {
       result_wrapper.classList.remove("money-calc__result-wrapper_shown");
-      result_container.classList.remove("money-calc__result-container_shadow")
+      // result_container.classList.remove("money-calc__result-container_shadow")
       this.classList.remove("money-calc__button_clear-shown");
 
       var bil_list = document.querySelector(".billing-list");
@@ -413,9 +413,19 @@ function money_calc_init(money_calc, calc_params) {
     bil_list.innerHTML = "";
     if (!bil_list.classList.contains("billing-list_shown")) {
       bil_list.classList.add("billing-list_shown");
+      print_billing_list(billing_list);
+      this.textContent = "Свернуть";
+    }
+    else {
+      bil_list.classList.remove("billing-list_shown");
+      this.textContent = "Подробней";
     }
 
-    print_billing_list(billing_list);
+    document.querySelector(".money-calc__form").scrollIntoView({
+      behavior: 'smooth',
+      block: 'end'
+    });
+
   });
 
   for (var i = 0; i < calc_params.rank_list.length; i++) {

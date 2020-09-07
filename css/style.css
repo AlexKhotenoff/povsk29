@@ -2320,7 +2320,7 @@
     background-color: #3f5842;
     animation: button-show 0.8s normal; }
   .money-calc__button_more {
-    margin: 10px;
+    margin: 5px;
     border: 1px solid #ffffff; }
 
 @keyframes placeholder-show {
@@ -2457,34 +2457,55 @@
 
 .billing-list {
   display: none;
-  background-color: #ffffff;
   box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
-  z-index: 1;
   overflow: hidden; }
   .billing-list_shown {
-    display: block;
-    animation: billing-list-show 1s normal; }
+    display: block; }
+    .billing-list_shown ul {
+      background-color: #3f5842;
+      animation: billing-list-show 0.5s normal; }
 
 .billing-list__list {
   margin: 0;
   padding: 0;
-  padding: 10px;
+  padding: 5px;
   list-style: none; }
 
 .billing-list__item {
-  display: flex; }
-
-.billing-list__item-container_name {
-  width: 60%; }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px; }
+  .billing-list__item:last-child {
+    margin-bottom: 0; }
 
 .billing-list__item-container_values {
   display: flex;
   justify-content: space-between;
+  align-self: flex-end;
   width: 40%; }
 
 .billing-list__name {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  padding: 5px;
+  background-color: #ffffff; }
+
+.billing-list__value {
+  width: 70%;
+  margin: 0;
+  padding: 0;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  background-color: #6b7c6d; }
+
+.billing-list__result {
+  width: 30%;
+  margin: 0;
+  padding: 0;
+  padding: 5px;
+  text-align: center;
+  background-color: #d2b042; }
 
 @media (max-width: 575px) {
   @keyframes result-show {
@@ -2543,7 +2564,9 @@
     font-size: 30px; }
   .money-calc__result-container:first-child {
     flex-direction: row;
-    justify-content: space-between; } }
+    justify-content: space-between; }
+  .billing-list__item-container_values {
+    width: 100%; } }
 
 .underconstruct__title {
   width: 60%;

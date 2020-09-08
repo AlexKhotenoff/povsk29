@@ -358,11 +358,18 @@ function money_calc_init(money_calc, calc_params) {
       bil_list.innerHTML = "";
       if (bil_list.classList.contains("billing-list_shown")) {
         bil_list.classList.remove("billing-list_shown");
+        money_calc_more.textContent = "Подробней";
       }
 
-      money_calc_result.textContent = (dirt_salary).toFixed(2) + " р.";
-      money_calc_tax.textContent = round(dirt_salary * 0.13, 2) + " р.";
-      money_calc_on_hand.textContent = round(dirt_salary * 0.87, 2) + " р.";
+     console.log(new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(dirt_salary));
+
+      money_calc_result.innerHTML = getRuNumberFormat(dirt_salary);
+      money_calc_tax.innerHTML = getRuNumberFormat(round(dirt_salary * 0.13, 2));
+      money_calc_on_hand.innerHTML =getRuNumberFormat(round(dirt_salary * 0.87, 2));
+     
+      // money_calc_result.innerHTML = (dirt_salary).toFixed(2) + " &#8381;";
+      // money_calc_tax.innerHTML = round(dirt_salary * 0.13, 2) + " &#8381;";
+      // money_calc_on_hand.innerHTML = round(dirt_salary * 0.87, 2) + " &#8381;";
     }
     else {
       this.classList.add("money-calc__button_error");
@@ -405,6 +412,8 @@ function money_calc_init(money_calc, calc_params) {
 
       var bil_list = document.querySelector(".billing-list");
       bil_list.innerHTML = "";
+
+      money_calc_more.textContent = "Подробней";
     }
   });
 
@@ -571,6 +580,10 @@ function money_calc_init(money_calc, calc_params) {
 
 function round(value, decimals) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+}
+
+function getRuNumberFormat(number) {
+  return new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(number);
 }
 
 var billing_list = {
@@ -850,7 +863,7 @@ function print_billing_list(list) {
 
       name_text.innerHTML = list.values[key].name;
       value_text.innerHTML = list.values[key].value;
-      result_text.innerHTML = list.values[key].result + " р.";
+      result_text.innerHTML = getRuNumberFormat(list.values[key].result);// + " &#8381;";
 
       list_container.append(list_item);
     }

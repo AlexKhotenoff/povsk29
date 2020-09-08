@@ -2317,7 +2317,7 @@
     z-index: 1; }
   .money-calc__button_clear-shown {
     display: inline-block;
-    background-color: #3f5842;
+    background-color: rgba(53, 77, 56, 0.7);
     animation: button-show 0.8s normal; }
   .money-calc__button_more {
     margin: 5px;
@@ -2395,10 +2395,8 @@
 
 @keyframes result-show {
   0% {
-    opacity: 0.1;
-    transform: translateX(-500px); }
+    transform: translateX(-600px); }
   100% {
-    opacity: 1;
     transform: translateX(0); } }
 
 .money-calc__result-wrapper {
@@ -2482,7 +2480,7 @@
   display: flex;
   justify-content: space-between;
   align-self: flex-end;
-  width: 40%; }
+  width: 50%; }
 
 .billing-list__name {
   margin: 0;

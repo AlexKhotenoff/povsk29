@@ -323,12 +323,14 @@ function money_calc_init(money_calc, calc_params) {
 
     if (money_calc_switch.checked) {
       extend_select.forEach(element => {
-        element.classList.add("money-calc__extend-show");
+        // element.classList.add("money-calc__extend-show");
+        element.classList.toggle("money-calc__extend-show");
       });
     }
     else {
       extend_select.forEach(element => {
-        element.classList.remove("money-calc__extend-show");
+        // element.classList.remove("money-calc__extend-show");
+        element.classList.toggle("money-calc__extend-show");
       });
     }
   });
@@ -345,9 +347,7 @@ function money_calc_init(money_calc, calc_params) {
 
       if (!result_wrapper.classList.contains("money-calc__result-wrapper_shown")) {
         result_wrapper.classList.add("money-calc__result-wrapper_shown");
-        // result_container.classList.add("money-calc__result-container_shadow")
         money_calc_clear.classList.add("money-calc__button_clear-shown");
-
 
         if (this.classList.contains("money-calc__button_error")) {
           this.classList.remove("money-calc__button_error");
@@ -361,12 +361,10 @@ function money_calc_init(money_calc, calc_params) {
         money_calc_more.textContent = "Подробней";
       }
 
-     console.log(new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(dirt_salary));
-
       money_calc_result.innerHTML = getRuNumberFormat(dirt_salary);
       money_calc_tax.innerHTML = getRuNumberFormat(round(dirt_salary * 0.13, 2));
-      money_calc_on_hand.innerHTML =getRuNumberFormat(round(dirt_salary * 0.87, 2));
-     
+      money_calc_on_hand.innerHTML = getRuNumberFormat(round(dirt_salary * 0.87, 2));
+
       // money_calc_result.innerHTML = (dirt_salary).toFixed(2) + " &#8381;";
       // money_calc_tax.innerHTML = round(dirt_salary * 0.13, 2) + " &#8381;";
       // money_calc_on_hand.innerHTML = round(dirt_salary * 0.87, 2) + " &#8381;";
@@ -396,9 +394,9 @@ function money_calc_init(money_calc, calc_params) {
   money_calc_clear.addEventListener("click", function (evt) {
     if (result_wrapper.classList.contains("money-calc__result-wrapper_shown")) {
       result_wrapper.classList.remove("money-calc__result-wrapper_shown");
-      // result_container.classList.remove("money-calc__result-container_shadow")
       this.classList.remove("money-calc__button_clear-shown");
 
+      //hide billing list
       var bil_list = document.querySelector(".billing-list");
       bil_list.innerHTML = "";
       if (bil_list.classList.contains("billing-list_shown")) {
@@ -420,13 +418,38 @@ function money_calc_init(money_calc, calc_params) {
   money_calc_more.addEventListener("click", function () {
     var bil_list = document.querySelector(".billing-list");
     bil_list.innerHTML = "";
+
     if (!bil_list.classList.contains("billing-list_shown")) {
       bil_list.classList.add("billing-list_shown");
       print_billing_list(billing_list);
+
+      var bil_list_value = bil_list.querySelectorAll(".billing-list__value");
+      var bil_list_result = bil_list.querySelectorAll(".billing-list__result");
+
+      bil_list_value.forEach(element => {
+        element.classList.add("billing-list__value_show");
+      });
+
+      bil_list_result.forEach(element => {
+        element.classList.add("billing-list__result_show");
+      });
+
       this.textContent = "Свернуть";
     }
     else {
       bil_list.classList.remove("billing-list_shown");
+
+      var bil_list_value = bil_list.querySelectorAll(".billing-list__value");
+      var bil_list_result = bil_list.querySelectorAll(".billing-list__result");
+
+      bil_list_value.forEach(element => {
+        element.classList.remove("billing-list__value_show");
+      });
+
+      bil_list_result.forEach(element => {
+        element.classList.remove("billing-list__result_show");
+      });
+
       this.textContent = "Подробней";
     }
 
@@ -646,7 +669,6 @@ function calc_money(calc_form) {
   var spec_conditions_range = parseFloat(calc_form.spec_conditions.value);
   var region = parseFloat(calc_form.region.value);
   var north_range = parseFloat(calc_form.north_range.value);
-  console.log(calc_form.rank.options[calc_form.rank.selectedIndex].text);
 
   var basic_pay = 0; //Оклад денежного содержания
   var period_pay = 0; //Выслуга лет
@@ -673,7 +695,6 @@ function calc_money(calc_form) {
     billing_list.values.pay_grade.result = pay_grade;
 
     basic_pay = round(rank + pay_grade, 2);
-    // console.log("Оклад денежного содержания: " + basic_pay.toFixed(2));
   }
 
   if (period >= 0) {
@@ -682,8 +703,6 @@ function calc_money(calc_form) {
     billing_list.values.period.name = "Надбавка за выслугу лет";
     billing_list.values.period.value = calc_form.period.options[calc_form.period.selectedIndex].text;
     billing_list.values.period.result = period_pay;
-
-    // console.log("Надбавка за выслугу лет: " + period_pay.toFixed(2));
   }
 
   if (qualification >= 0) {
@@ -692,8 +711,6 @@ function calc_money(calc_form) {
     billing_list.values.qualification.name = "Надбавка за классную квалификацию";
     billing_list.values.qualification.value = calc_form.qualification.options[calc_form.qualification.selectedIndex].text;
     billing_list.values.qualification.result = qualification_pay;
-
-    // console.log("Надбавка за классную квалификацию: " + qualification_pay.toFixed(2));
   }
 
   if (secret >= 0) {
@@ -702,8 +719,6 @@ function calc_money(calc_form) {
     billing_list.values.secret.name = "Надбавка за работу со сведениями, составляющими государственную тайну";
     billing_list.values.secret.value = calc_form.secret.options[calc_form.secret.selectedIndex].text;
     billing_list.values.secret.result = secret_pay;
-
-    // console.log("Надбавка за работу со сведениями, составляющими государственную тайну: " + secret_pay.toFixed(2));
   }
 
   if (secret_period >= 0) {
@@ -712,8 +727,6 @@ function calc_money(calc_form) {
     billing_list.values.secret_period.name = "Надбавка за стаж работы в подразделениях ЗГТ";
     billing_list.values.secret_period.value = calc_form.secret_period.options[calc_form.secret_period.selectedIndex].text;
     billing_list.values.secret_period.result = secret_period_pay;
-
-    // console.log("Надбавка за стаж работы в подразделениях ЗГТ: " + secret_period_pay.toFixed(2));
   }
 
   if (cypher_period >= 0) {
@@ -722,8 +735,6 @@ function calc_money(calc_form) {
     billing_list.values.cypher_period.name = "Надбавка за стаж работы в шифроорганах";
     billing_list.values.cypher_period.value = calc_form.cypher_period.options[calc_form.cypher_period.selectedIndex].text;
     billing_list.values.cypher_period.result = cypher_period_pay;
-
-    // console.log("Надбавка за стаж работы в шифроорганах: " + cypher_period_pay.toFixed(2));
   }
 
   if (sport >= 0) {
@@ -732,8 +743,6 @@ function calc_money(calc_form) {
     billing_list.values.sport.name = "Надбавка за квалификационный уровень по физической подготовке";
     billing_list.values.sport.value = calc_form.sport.options[calc_form.sport.selectedIndex].text;
     billing_list.values.sport.result = sport_pay;
-
-    // console.log("Надбавка за квалификационный уровень по физической подготовке: " + sport_pay.toFixed(2));
   }
 
   if (prize_range >= 0) {
@@ -742,8 +751,6 @@ function calc_money(calc_form) {
     billing_list.values.prize_range.name = "Премия за добросовестное исполнение должностных обязанностей";
     billing_list.values.prize_range.value = calc_form.prize_range.options[calc_form.prize_range.selectedIndex].text;
     billing_list.values.prize_range.result = prize_range_pay;
-
-    // console.log("Премия за добросовестное исполнение должностных обязанностей: " + prize_range_pay.toFixed(2));
   }
 
   if (legal_education >= 0) {
@@ -753,8 +760,6 @@ function calc_money(calc_form) {
       " и занимающим воинские должности юридической специальности";
     billing_list.values.legal_education.value = calc_form.legal_education.options[calc_form.legal_education.selectedIndex].text;
     billing_list.values.legal_education.result = legal_education_pay;
-
-    // console.log("Надбавка военнослужащим, имеющим высшее юридическое образование и занимающим воинские должности юридической специальности: " + legal_education_pay.toFixed(2));
   }
 
   if (risk_range >= 0) {
@@ -763,8 +768,6 @@ function calc_money(calc_form) {
     billing_list.values.risk_range.name = "Надбавка за выполнение задач, непосредственно связанных с риском для жизни и здоровья в мирное время";
     billing_list.values.risk_range.value = calc_form.risk_range.options[calc_form.risk_range.selectedIndex].text;
     billing_list.values.risk_range.result = risk_range_pay;
-
-    // console.log("Надбавка за выполнение задач, непосредственно связанных с риском для жизни и здоровья в мирное время: " + risk_range_pay.toFixed(2));
   }
 
   if (spec_achievement_range >= 0) {
@@ -773,8 +776,6 @@ function calc_money(calc_form) {
     billing_list.values.spec_achievement.name = "Надбавка за особые достижения в военной службе";
     billing_list.values.spec_achievement.value = calc_form.spec_achievement.options[calc_form.spec_achievement.selectedIndex].text;
     billing_list.values.spec_achievement.result = spec_achievement_pay;
-
-    // console.log("Надбавка за особые достижения в военной службе: " + spec_achievement_pay.toFixed(2));
   }
 
   if (spec_conditions_range >= 0) {
@@ -783,8 +784,6 @@ function calc_money(calc_form) {
     billing_list.values.spec_conditions_range.name = "Надбавка за особые условия военной службы, включая командование подразделением";
     billing_list.values.spec_conditions_range.value = calc_form.spec_conditions.options[calc_form.spec_conditions.selectedIndex].text;
     billing_list.values.spec_conditions_range.result = spec_conditions_pay;
-
-    // console.log("Надбавка за особые условия военной службы, включая командование подразделением: " + spec_conditions_pay.toFixed(2));
   }
 
   if (region >= 0) {
@@ -793,11 +792,6 @@ function calc_money(calc_form) {
     billing_list.values.region.name = "Районный коэффициент";
     billing_list.values.region.value = calc_form.region.options[calc_form.region.selectedIndex].text;
     billing_list.values.region.result = region_pay;
-
-    // console.log("РАЙОННЫЙ КОЭФФИЦИЕНТ ЗА ВОЕННУЮ СЛУЖБУ В РАЙОНАХ КРАЙНЕГО СЕВЕРА И ПРИРАВНЕННЫХ К НИМ МЕСТНОСТЯХ," +
-    //   " С НЕБЛАГОПРИЯТНЫМИ ЭКОЛОГИЧЕСКИМИ И КЛИМАТИЧЕСКИМИ УСЛОВИЯМИ, ОТДАЛЕННЫХ, ВЫСОКОГОРНЫХ РАЙОНАХ, ПУСТЫННЫХ" +
-    //   " И БЕЗВОДНЫХ МЕСТНОСТЯХ: " +
-    //   region_pay.toFixed(2));
   }
 
   if (north_range >= 0) {
@@ -806,12 +800,9 @@ function calc_money(calc_form) {
     billing_list.values.north_range.name = "Надбавка за военную службу в районах Крайнего севера и приравненных к ним местностях";
     billing_list.values.north_range.value = calc_form.north_range.options[calc_form.north_range.selectedIndex].text;
     billing_list.values.north_range.result = north_range_pay;
-
-    // console.log("НАДБАВКА ЗА ВОЕННУЮ СЛУЖБУ В РАЙОНАХ КРАЙНЕГО СЕВЕРА И ПРИРАВНЕННЫХ К НИМ МЕСТНОСТЯХ," +
-    //   " А ТАКЖЕ В ДРУГИХ МЕСТНОСТЯХ С НЕБЛАГОПРИЯТНЫМИ КЛИМАТИЧЕСКИМИ ИЛИ ЭКОЛОГИЧЕСКИМИ УСЛОВИЯМИ, В ТОМ" +
-    //   " ЧИСЛЕ ОТДАЛЕННЫХ МЕСТНОСТЯХ: " + north_range_pay.toFixed(2));
   }
 
+  //calc formula
   return basic_pay + period_pay + qualification_pay + secret_pay +
     secret_period_pay + cypher_period_pay + sport_pay + prize_range_pay +
     legal_education_pay + risk_range_pay + spec_achievement_pay +
@@ -819,6 +810,7 @@ function calc_money(calc_form) {
 
 }
 
+//Print billing list function
 function print_billing_list(list) {
   var bil_list = document.querySelector(".billing-list");
 

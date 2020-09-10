@@ -1267,7 +1267,7 @@
   align-items: center;
   margin: 0;
   padding: 20px 10px;
-  background-color: rgba(53, 77, 56, 0.7);
+  background-color: #6b7c6d;
   list-style: none; }
 
 .breadcrumbs__item {
@@ -2317,7 +2317,7 @@
     z-index: 1; }
   .money-calc__button_clear-shown {
     display: inline-block;
-    background-color: rgba(53, 77, 56, 0.7);
+    background-color: #6b7c6d;
     animation: button-show 0.8s normal; }
   .money-calc__button_more {
     margin: 5px;
@@ -2480,7 +2480,16 @@
   display: flex;
   justify-content: space-between;
   align-self: flex-end;
-  width: 50%; }
+  width: 50%;
+  overflow: hidden; }
+
+@keyframes billing-list-item-show {
+  from {
+    opacity: 0;
+    transform: translateY(-50px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
 
 .billing-list__name {
   margin: 0;
@@ -2489,6 +2498,7 @@
   background-color: #ffffff; }
 
 .billing-list__value {
+  display: none;
   width: 70%;
   margin: 0;
   padding: 0;
@@ -2496,16 +2506,23 @@
   text-align: center;
   color: white;
   background-color: #6b7c6d; }
+  .billing-list__value_show {
+    display: block;
+    animation: billing-list-item-show 1s normal; }
 
 .billing-list__result {
+  display: none;
   width: 30%;
   margin: 0;
   padding: 0;
   padding: 5px;
   text-align: center;
   background-color: #d2b042; }
+  .billing-list__result_show {
+    display: block;
+    animation: billing-list-item-show 1s normal; }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   @keyframes result-show {
     0% {
       opacity: 0.1;
@@ -2565,6 +2582,24 @@
     justify-content: space-between; }
   .billing-list__item-container_values {
     width: 100%; } }
+
+.calc-cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 30px 15px;
+  background-color: rgba(107, 123, 109, 0.1);
+  background-image: url(../img/background/hexagon.png); }
+
+.calc-cards__item {
+  width: 30vw;
+  padding: 15px; }
+  .calc-cards__item_money {
+    background-color: #ffffff; }
+
+.calc-cards__button {
+  display: inline-block;
+  padding: 7px; }
 
 .underconstruct__title {
   width: 60%;

@@ -81,7 +81,7 @@ nav_dropdown_button.forEach(element => {
 function menu_toggle() {
   if (!sandvitch_icon.classList.contains('main-nav__sandvitch_on')) {
     menu_open();
-  }
+} 
   else {
     menu_close();
   }
@@ -772,10 +772,9 @@ function calc_money(calc_form) {
 
   if (spec_achievement_range >= 0) {
     spec_achievement_pay = round(pay_grade * spec_achievement_range, 2);
-
-    billing_list.values.spec_achievement.name = "Надбавка за особые достижения в военной службе";
-    billing_list.values.spec_achievement.value = calc_form.spec_achievement.options[calc_form.spec_achievement.selectedIndex].text;
-    billing_list.values.spec_achievement.result = spec_achievement_pay;
+    billing_list.values.spec_achievement_range.name = "Надбавка за особые достижения в военной службе";
+    billing_list.values.spec_achievement_range.value = calc_form.spec_achievement.options[calc_form.spec_achievement.selectedIndex].text;
+    billing_list.values.spec_achievement_range.result = spec_achievement_pay;
   }
 
   if (spec_conditions_range >= 0) {
